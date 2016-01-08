@@ -39,6 +39,6 @@ Thumbs.db
 # Project Ignores #
 ###################
 sftp-config.json
-prepros.sftp-config
+prepros.cfg
 *.sublime-project
 *.sublime-workspace
