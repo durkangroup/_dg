@@ -35,3 +35,10 @@
 .Trashes
 ehthumbs.db
 Thumbs.db
+
+# Project Ignores #
+###################
+sftp-config.json
+prepros.sftp-config
+*.sublime-project
+*.sublime-workspace
