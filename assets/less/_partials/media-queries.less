@@ -1,0 +1,59 @@
+// GRID
+
+@gutter:                    40px;
+
+@width-xxs:                 480px;
+@width-xs:                  600px;
+@width-sm:                  840px;
+@width-md:                  960px;
+@width-lg:                  1280px;
+@width-xl:                  1440px;
+@width-xxl:                 1600px;
+
+@container-xxs:             (@width-xxs);
+@container-xs:              (@width-xs);
+@container-sm:              (@width-sm);
+@container-md:              (@width-md);
+@container-lg:              (@width-lg);
+@container-xl:              (@width-xl);
+@container-xxl:             (@width-xxl);
+
+
+@width-xxs-max:             (@width-xxs - 1);
+@width-xs-max:              (@width-xs - 1);
+@width-sm-max:              (@width-sm - 1);
+@width-md-max:              (@width-md - 1);
+@width-lg-max:              (@width-lg - 1);
+@width-xl-max:              (@width-xl - 1);
+@width-xxl-max:             (@width-xxl - 1);
+
+
+// MEDIA QUERIES
+
+@xxs:                       ~"(min-width: @{width-xxs})";
+@xs:                        ~"(min-width: @{width-xs})";
+@sm:                        ~"(min-width: @{width-sm})";
+@md:                        ~"(min-width: @{width-md})";
+@lg:                        ~"(min-width: @{width-lg})";
+@xl:                        ~"(min-width: @{width-xl})";
+@xxl:                       ~"(min-width: @{width-xxl})";
+
+@xxs-max:                   ~"(max-width: @{width-xxs-max})";
+@xs-max:                    ~"(max-width: @{width-xs-max})";
+@sm-max:                    ~"(max-width: @{width-sm-max})";
+@md-max:                    ~"(max-width: @{width-md-max})";
+@lg-max:                    ~"(max-width: @{width-lg-max})";
+@xl-max:                    ~"(max-width: @{width-xl-max})";
+@xxl-max:                   ~"(max-width: @{width-xxl-max})";
+
+
+@mobile-min:                @md;
+@mobile:                    @md-max;
+
+@hd:                        ~"(-webkit-min-device-pixel-ratio: 1.5)",
+                            ~"only screen and (min--moz-device-pixel-ratio: 1.5)",
+                            ~"only screen and (-o-min-device-pixel-ratio: 3/2)",
+                            ~"only screen and (min-device-pixel-ratio: 1.5)",
+                            ~"only screen and (min-resolution:144dppx)";
+
+@print:                     ~"print";

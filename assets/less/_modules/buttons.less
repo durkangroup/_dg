@@ -1,0 +1,111 @@
+// Buttons, duh
+
+button,
+input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+  width: auto;
+  border: 0;
+  border-radius: 3px;
+  color: #fff;
+  background: @brand-secondary;
+  line-height: normal;
+  padding: 0.5rem 1rem;
+  .global-transition();
+
+  &:hover {
+    background: @brand-primary;
+  }
+}
+
+.btn {
+	color: #fff;
+  font-weight: 500;
+	font-family: @font-serif;
+  // height: 50px;
+  // line-height: 49px;
+  font-style: italic;
+  text-align: center;
+  text-transform: lowercase;
+  letter-spacing: 0;
+  line-height: 1.5;
+  border: 3px solid #fff;
+  border-radius: 3px;
+  padding: 0.75rem 1rem;
+  background: transparent;
+  display: inline-block;
+  .global-transition();
+
+  span {
+    display: inline-block;
+  }
+
+  i {
+    font-size: 20px;
+    margin-right: 5px;
+    float: left;
+  }
+
+
+}
+
+
+
+.btn [class^="entypo-"],
+.btn [class*=" entypo-"] {
+  font-size: 20px;
+}
+
+.btn--trans {
+	color: #fff !important;
+	background: rgba(255,255,255,0.25);
+	border: 0;
+	padding: 12px 16px;
+	&:hover {
+		color: @brand-primary !important;
+		background: #fff;
+		background: rgba(255,255,255,1);
+	}
+}
+
+.btn--default {
+	color: @brand-primary;
+	background: #fff;
+	border-color: #fff;
+}
+
+.btn--primary {
+	color: #fff;
+	background: @brand-primary;
+	border-color: @brand-primary;
+  &:hover {
+    color: @brand-primary !important;
+    background: #fff;
+  }
+  &.btn--outline {
+    background: transparent;
+    color: @brand-primary !important;
+    &:hover {
+      color: #fff !important;
+      background: @brand-primary !important;
+    }
+  }
+}
+
+.btn--secondary {
+	color: #fff !important;
+	background: @brand-secondary;
+	border-color: @brand-secondary;
+	&:hover {
+		color: @brand-secondary !important;
+		background: #fff;
+	}
+  &.btn--outline {
+    background: transparent;
+    color: @brand-secondary !important;
+    &:hover {
+      color: #fff !important;
+      background: @brand-secondary !important;
+    }
+  }
+}

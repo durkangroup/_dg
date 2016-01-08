@@ -1,0 +1,256 @@
+.btn-twitter {
+  background: @twitter;
+}
+.btn-facebook {
+  background: @facebook;
+}
+.btn-pinterest {
+  background: @pinterest;
+}
+.btn-google {
+  background: @googleplus;
+}
+.btn-houzz {
+  background: @houzz;
+}
+.btn-email {
+  background: #383838;
+}
+
+
+// SOCIAL ICONS
+
+.sociallinks li {
+  display: inline-block;
+  margin: 0 4px;
+}
+@media (max-width: 623px) {
+  .sociallinks li {
+    margin: 0 2px;
+  }
+}
+.sociallinks li a {
+  color: #455a64;
+  font-size: 2.25rem;
+  background: #fff;
+  line-height: 1em;
+  height: 1em;
+  width: 1em;
+  padding: 0.75rem;
+  box-sizing: content-box;
+  display: block;
+}
+@media (max-width: 623px) {
+  .sociallinks li a {
+    font-size: 1.75rem;
+    padding: 0.5rem;
+  }
+}
+.sociallinks li a:hover {
+  color: #455a64;
+  opacity: 0.75;
+}
+.sociallinks li a span {
+  display: none;
+}
+.share {
+  width: 56px;
+  height: 56px;
+  position: fixed;
+  bottom: 60px;
+  right: 60px;
+  z-index: 1060;
+}
+.share:after {
+  content: '';
+  position: fixed;
+  bottom: 64px;
+  right: 64px;
+  width: 3600px;
+  height: 3600px;
+  margin: 0 -1776px -1776px 0;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.75);
+  z-index: -1;
+  opacity: 0;
+  transform: scale(0);
+  animation: circleGoaway cubic-bezier(0.75, 0, 0, 1) 0.4s backwards;
+}
+.share--open .share:after {
+  opacity: 0;
+  transform: scale(1);
+  animation: circleTakeover cubic-bezier(1, 0, 0.75, 1) 0.4s forwards;
+
+
+}
+
+@keyframes circleTakeover {
+  0%   { transform: scale(0); opacity: 0.5; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+@keyframes circleGoaway {
+  0%   { transform: scale(1); opacity: 1; }
+  100% { transform: scale(0); opacity: 0.5; }
+}
+
+
+
+.share .share--trigger {
+  position: absolute;
+  width: 56px;
+  height: 56px;
+  bottom: 0;
+  z-index: 2;
+}
+.share .share--trigger button {
+  color: #fff;
+  font-size: 24px;
+  width: 48px;
+  height: 48px;
+  display: block;
+  border: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin: -28px 0 0 -28px;
+  border-radius: 50%;
+  padding: 0;
+  text-align: center;
+  background: #e97300;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.25), 0 4px 8px rgba(0, 0, 0, 0.25);
+  transition: all 0.25s cubic-bezier(1, 0, 0.86, 1);
+}
+.share--open .share .share--trigger button {
+  width: 32px;
+  height: 32px;
+  line-height: 32px;
+  margin: -16px 0 0 -16px;
+}
+.share .share--trigger button i:before {
+  font-size: 20px;
+  width: 20px;
+  height: 20px;
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin: -10px 0 0 -10px;
+  opacity: 1;
+  transition: all 0.25s cubic-bezier(1, 0, 0.86, 1);
+}
+.share--open .share .share--trigger button i:before {
+  font-size: 16px;
+  width: 16px;
+  height: 16px;
+  margin: -8px 0 0 -8px;
+  opacity: 0;
+  -webkit-transform: rotate(180deg);
+      -ms-transform: rotate(180deg);
+          transform: rotate(180deg);
+}
+.share .share--trigger button i:after {
+  content: "\e60a";
+  font-size: 24px;
+  width: 24px;
+  height: 24px;
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin: -12px 0 0 -12px;
+  opacity: 0;
+  transition: all 0.25s cubic-bezier(1, 0, 0.86, 1);
+}
+.share--open .share .share--trigger button i:after {
+  font-size: 20px;
+  width: 20px;
+  height: 20px;
+  margin: -10px 0 0 -10px;
+  opacity: 1;
+  -webkit-transform: rotate(180deg);
+      -ms-transform: rotate(180deg);
+          transform: rotate(180deg);
+}
+.share .share--trigger button span {
+  display: none;
+}
+.share .share--wrap {
+  position: absolute;
+  bottom: 56px;
+  z-index: 1;
+}
+.share .share--wrap {
+  padding: 0 9px;
+}
+.share .share--wrap .share--buttons li {
+  opacity: 0;
+  visibility: hidden;
+  margin-bottom: -8px;
+  border-radius: 50%;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.25);
+  transition: all 0.25s cubic-bezier(1, 0, 0.86, 1);
+}
+.share--open .share .share--wrap .share--buttons li {
+  opacity: 1;
+  visibility: visible;
+  margin-top: 12px;
+  margin-bottom: 0;
+}
+.share .share--wrap .share--buttons a {
+  color: #fff;
+  font-size: 18px;
+  width: 32px;
+  height: 32px;
+  border: 0;
+  border-radius: 50%;
+  padding: 0;
+  text-align: center;
+  display: block;
+}
+.share--open .share .share--wrap .share--buttons a {
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.25);
+  transition: none;
+  &.btn-twitter {
+    &:hover {
+      color: @twitter;
+    }
+  }
+  &.btn-facebook {
+    &:hover {
+      color: @facebook;
+    }
+  }
+  &.btn-pinterest {
+    &:hover {
+      color: @pinterest;
+    }
+  }
+  &.btn-google {
+    &:hover {
+      color: @googleplus;
+    }
+  }
+
+  &.btn-email {
+    &:hover {
+      color: #383838;
+    }
+  }
+}
+.share .share--wrap .share--buttons a:hover {
+  background: #fff;
+}
+
+
+.share .share--wrap .share--buttons a i {
+  margin: 0;
+  font-size: 16px;
+  line-height: 32px;
+  height: 32px;
+  float: none;
+  display: inline-block;
+}
+.share .share--wrap .share--buttons a span {
+  display: none;
+}

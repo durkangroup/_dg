@@ -1,0 +1,339 @@
+// Header
+
+#masthead {
+  width: 100%;
+  height: @header-height-tall;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1030;
+  background: #fff;
+  background: rgba(255,255,255,0.95);
+  box-shadow: 0 1px 1px rgba(0,0,0,0.1);
+  .global-transition();
+
+  .has-scrolled & {
+    height: @header-height;
+  }
+
+  @media @mobile {
+    height: @header-height;
+    .show-nav & {
+      box-shadow: 0 1px 1px rgba(0, 0, 0, 0);
+    }
+  }
+
+  .container {
+    height: 100%;
+    @media @md {
+      width: 100%;
+    }
+  }
+
+  // FOR BLOG POSTS WITH COVER IMAGE
+  .single-post & {
+    background: rgba(255,255,255,0);
+    box-shadow: 0 1px 1px rgba(0,0,0,0);
+    .has-scrolled & {
+      background: rgba(255,255,255,0.95);
+      box-shadow: 0 1px 1px rgba(0,0,0,0.1);
+    }
+  }
+
+}
+
+.site-branding {
+  height: 100%;
+  float: left;
+  z-index: 2;
+
+  @media @mobile {
+    //width: 100%;
+  }
+
+  .site-title {
+    font-size: 28px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin: 0;
+    position: relative;
+    z-index: 2;
+    top: 50%;
+    transform: translateY(-50%);
+    .global-transition();
+
+    a {
+      color: @brand-primary;
+      display: block;
+      .global-transition();
+
+      &:hover {
+        color: @brand-secondary;
+      }
+
+      @media @mobile {
+        font-size: 24px;
+      }
+
+      .has-scrolled & {
+        font-size: 24px;
+      }
+
+      // FOR BLOG POSTS WITH COVER IMAGE
+      .show-nav:not(.has-scrolled) .single-post & {
+        color: #455a64;
+        transition-delay: 0s;
+      }
+      :not(.show-nav):not(.has-scrolled) .single-post & {
+        color: #fff;
+        transition-delay:0s;
+      }
+      .has-scrolled:not(.show-nav) .single-post & {
+        color: #455a64;
+        transition-delay: 0.2s;
+      }
+      :not(.has-scrolled):not(.show-nav) .single-post & {
+        color: #fff;
+        transition-delay :0s;
+      }
+
+      :not(.show-nav).has-scrolled .single-post &:hover,
+      :not(.has-scrolled):not(.show-nav) .single-post &:hover {
+        color: #448aff;
+      }
+
+    }
+
+  }
+
+}
+
+.menu-toggle {
+  width: @header-height;
+  height: 100%;
+  border-radius: 0;
+  padding: 0;
+  background: transparent;
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 1;
+  opacity: 0;
+  visibility: hidden;
+  .global-transition();
+
+  &:hover {
+    background: transparent;
+  }
+
+  @media @mobile {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  span,
+  &:after,
+  &:before {
+    content:'';
+    width: 24px;
+    height: 2px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin: -1px 0 0 -12px;
+    background: @blue-grey-200;
+    display: block;
+    .global-transition();
+    transition-property: transform;
+    transition-delay: 0s;
+
+    // FOR BLOG POSTS WITH COVER IMAGE
+    :not(.has-scrolled) .single-post & {
+      background: #fff;
+    }
+  }
+
+  span {
+    text-indent: -10000px;
+    transition-property: opacity, transform;
+    transition-delay: 0.25s;
+
+    .show-nav & {
+      opacity: 0;
+      transform: rotateY(90deg);
+      transition-delay: 0s;
+    }
+  }
+
+  &:before {
+    transform: translateY(-6px);
+    .show-nav & {
+      transform: rotate(-45deg) translateY(0);
+      transition-delay: 0.25s;
+    }
+  }
+
+  &:after {
+    transform: translateY(6px);
+    .show-nav & {
+      transform: rotate(45deg) translateY(0);
+      transition-delay: 0.25s;
+    }
+  }
+
+  &:hover {
+    span,
+    &:before,
+    &:after  {
+      width: 28px;
+      margin: -1px 0 0 -14px;
+    }
+  }
+
+  .show-nav & {
+
+    span,
+    &:after,
+    &:before {
+      width: 28px;
+      margin: -1px 0 0 -14px;
+      background: @text-color;
+    }
+
+    &:hover {
+      span,
+      &:before,
+      &:after  {
+        background: @blue-grey-200;
+      }
+
+    }
+
+  }
+
+}
+
+.main-navigation {
+  height: 100%;
+  float: right;
+  visibility: visible;
+  .global-transition();
+
+  @media @mobile {
+    float: none;
+    opacity: 0;
+    visibility: hidden;
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    top: @header-height;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    transition-delay: 0.5s;
+
+    .show-nav & {
+      background: #fff;
+      background: rgba(255,255,255,0.95);
+      opacity: 1;
+      visibility: visible;
+      transition-delay: 0s;
+    }
+
+    // FOR BLOG POSTS WITH COVER IMAGE
+    .single-post & {
+      top: 0;
+    }
+
+  }
+
+  ul {
+    float: right;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    opacity: 1;
+    .global-transition();
+
+    @media @mobile {
+      float: none;
+      text-align: center;
+      position: relative;
+      top: 50%;
+      opacity: 0;
+      margin-top: -60px;
+      transform: translateY(-50%) scale(1.1);
+
+      .show-nav & {
+        opacity: 1;
+        transform: translateY(-50%) scale(1);
+        transition-delay: 0.25s;
+      }
+    }
+
+    li {
+      float: left;
+      margin-left: 20px;
+
+      @media @mobile {
+        float: none;
+        margin: 0;
+      }
+
+      a {
+        color: @blue-grey-200;
+        font-size: 20px;
+        font-weight: 600;
+
+        &:hover{
+          color: @text-color;
+        }
+
+        @media @mobile {
+          font-size: 4rem;
+          font-weight: 400;
+          display: block;
+        }
+
+        // FOR BLOG POSTS WITH COVER IMAGE
+        :not(.has-scrolled) .single-post & {
+          color: #fff;
+          .opacity(0.65);
+          &:hover{
+            .opacity(1.0);
+          }
+        }
+        .has-scrolled .single-post & {
+          color: @blue-grey-200;
+          .opacity(1.0);
+          &:hover {
+            color: @text-color;
+            .opacity(1.0);
+          }
+        }
+
+      }
+
+      &[class^="current_page_"] a,
+      &[class*="current_page_"] a {
+        color: @text-color;
+
+        // FOR BLOG POSTS WITH COVER IMAGE
+        :not(.has-scrolled) .single-post & {
+          color: #fff;
+          .opacity(1);
+        }
+        .has-scrolled .single-post & {
+          color: @text-color;
+          .opacity(1);
+        }
+
+      }
+
+    }
+
+  }
+
+}
