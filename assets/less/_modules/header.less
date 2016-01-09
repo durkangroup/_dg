@@ -31,16 +31,6 @@
     }
   }
 
-  // FOR BLOG POSTS WITH COVER IMAGE
-  .single-post & {
-    background: rgba(255,255,255,0);
-    box-shadow: 0 1px 1px rgba(0,0,0,0);
-    .has-scrolled & {
-      background: rgba(255,255,255,0.95);
-      box-shadow: 0 1px 1px rgba(0,0,0,0.1);
-    }
-  }
-
 }
 
 .site-branding {
@@ -79,29 +69,6 @@
 
       .has-scrolled & {
         font-size: 24px;
-      }
-
-      // FOR BLOG POSTS WITH COVER IMAGE
-      .show-nav:not(.has-scrolled) .single-post & {
-        color: #455a64;
-        transition-delay: 0s;
-      }
-      :not(.show-nav):not(.has-scrolled) .single-post & {
-        color: #fff;
-        transition-delay:0s;
-      }
-      .has-scrolled:not(.show-nav) .single-post & {
-        color: #455a64;
-        transition-delay: 0.2s;
-      }
-      :not(.has-scrolled):not(.show-nav) .single-post & {
-        color: #fff;
-        transition-delay :0s;
-      }
-
-      :not(.show-nav).has-scrolled .single-post &:hover,
-      :not(.has-scrolled):not(.show-nav) .single-post &:hover {
-        color: #448aff;
       }
 
     }
@@ -148,11 +115,6 @@
     .global-transition();
     transition-property: transform;
     transition-delay: 0s;
-
-    // FOR BLOG POSTS WITH COVER IMAGE
-    :not(.has-scrolled) .single-post & {
-      background: #fff;
-    }
   }
 
   span {
@@ -242,11 +204,6 @@
       transition-delay: 0s;
     }
 
-    // FOR BLOG POSTS WITH COVER IMAGE
-    .single-post & {
-      top: 0;
-    }
-
   }
 
   ul {
@@ -297,39 +254,11 @@
           display: block;
         }
 
-        // FOR BLOG POSTS WITH COVER IMAGE
-        :not(.has-scrolled) .single-post & {
-          color: #fff;
-          .opacity(0.65);
-          &:hover{
-            .opacity(1.0);
-          }
-        }
-        .has-scrolled .single-post & {
-          color: @blue-grey-200;
-          .opacity(1.0);
-          &:hover {
-            color: @text-color;
-            .opacity(1.0);
-          }
-        }
-
       }
 
       &[class^="current_page_"] a,
       &[class*="current_page_"] a {
         color: @text-color;
-
-        // FOR BLOG POSTS WITH COVER IMAGE
-        :not(.has-scrolled) .single-post & {
-          color: #fff;
-          .opacity(1);
-        }
-        .has-scrolled .single-post & {
-          color: @text-color;
-          .opacity(1);
-        }
-
       }
 
     }

@@ -58,21 +58,22 @@ class wp_navwalker extends Walker_Nav_Menu {
       $class_names = $value = '';
 
       $classes = empty( $item->classes ) ? array() : (array) $item->classes;
+      $classes[] = 'menu-item-' . $item->ID;
 
-      // $class_names = join( ' ', apply_filters( 'nav_menu_css_class', array_filter( $classes ), $item, $args ) );
+      $class_names = join( ' ', apply_filters( 'nav_menu_css_class', array_filter( $classes ), $item, $args ) );
 
       if ( $args->has_children )
         $class_names .= ' dropdown';
 
       if ( in_array( 'current-menu-item', $classes ) )
-        $class_names .= 'active';
+        $class_names .= ' active';
 
       $class_names = $class_names ? ' class="' . esc_attr( $class_names ) . '"' : '';
 
-      $title = apply_filters( 'nav_menu_item_id', 'menu-item-'. seoUrl($item->title), $item, $args );
-      $title = $title ? ' id="' . esc_attr( $title ) . '"' : '';
+      $id = apply_filters( 'nav_menu_item_id', 'menu-item-'. $item->ID, $item, $args );
+      $id = $id ? ' id="' . esc_attr( $id ) . '"' : '';
 
-      $output .= $indent . '<li' . $title . $value . $class_names .'>';
+      $output .= $indent . '<li' . $id . $value . $class_names .'>';
 
       $atts = array();
       // $atts['title']  = ! empty( $item->title )  ? $item->title  : '';
