@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<browserconfig>
+  <msapplication>
+    <tile>
+      <square70x70logo src="/wp-content/themes/dg/tile-128x128.png"/>
+      <square150x150logo src="/wp-content/themes/dg/tile-270x270.png"/>
+      <wide310x150logo src="/wp-content/themes/dg/tile-580x270.png"/>
+      <square310x310logo src="/wp-content/themes/dg/tile-580x580.png"/>
+      <TileColor>#1e1e1e</TileColor>
+    </tile>
+  </msapplication>
+</browserconfig>
