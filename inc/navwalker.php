@@ -204,3 +204,44 @@ class wp_navwalker extends Walker_Nav_Menu {
     }
   }
 }
+
+// REMOVE ACTIVE BLOG LINK ON CUSTOM POST TYPE ARCHIVES
+function is_blog() {
+  global $post;
+  $posttype = get_post_type( $post );
+  return ( ( $posttype == 'post' ) && ( is_home() || is_single() || is_archive() || is_category() || is_tag() || is_author() ) ) ? true : false;
+}
+
+function fix_blog_link_on_cpt( $classes, $item, $args ) {
+  if( !is_blog() ) {
+    $blog_page_id = intval( get_option('page_for_posts') );
+    if( $blog_page_id != 0 && $item->object_id == $blog_page_id )
+      unset($classes[array_search('current_page_parent', $classes)]);
+  }
+  return $classes;
+}
+add_filter( 'nav_menu_css_class', 'fix_blog_link_on_cpt', 10, 3 );
+
+// ADD ACTIVE LINKS TO CUSTOM POST TYPES ARCHIVES
+function add_current_nav_class($classes, $item) {
+
+  // Getting the current post details
+  global $post;
+
+  // Getting the post type of the current post
+  $current_post_type = get_post_type_object(get_post_type($post->ID));
+  $current_post_type_slug = $current_post_type->rewrite['slug'];
+
+  // Getting the URL of the menu item
+  $menu_slug = strtolower(trim($item->url));
+
+  // If the menu item URL contains the current post types slug add the current-menu-item class
+  if (strpos($menu_slug,$current_post_type_slug) !== false) {
+    $classes[] = 'current-menu-item';
+  }
+
+  // Return the corrected set of classes to be added to the menu item
+  return $classes;
+
+}
+add_action('nav_menu_css_class', 'add_current_nav_class', 10, 2 );
