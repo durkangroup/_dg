@@ -92,3 +92,5 @@ include_once(TEMPLATEPATH.'/inc/sidebars.php');
 include_once(TEMPLATEPATH.'/inc/widgets.php');
 include_once(TEMPLATEPATH.'/inc/excerpts.php');
 include_once(TEMPLATEPATH.'/inc/gravityforms.php');
+
+include_once(TEMPLATEPATH.'/plugins/bs-shortcodes.php');
