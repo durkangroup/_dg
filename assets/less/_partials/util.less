@@ -1,7 +1,7 @@
 // VARIABLES
 // ============================================
 
-@domain-name:               '//harmangroup.durkancloud.xyz';
+@domain-name:               '//raabcollection.durkancloud.xyz';
 @path-to-theme:             '@{domain-name}/wp-content/themes/_dg';
 
 // Color swatches
@@ -12,36 +12,38 @@
 
 // Typography
 @font-size:          				16px;
-@line-height:         			1.75;
+@line-height:         			1.5;
 @margin:										@line-height*1rem;
 
-@font-sans:                 'Din', sans-serif;
-@font-serif:                serif;
+@font-sans:                 'Circular', sans-serif;
+@font-sans-alt:             'Tungsten', sans-serif;
+@font-serif:                'garamond-premier-pro', serif;
+@font-serif-alt:            'superclarendon', serif;
 @font-fixed:                monospace;
 
-@body-font:                 @font-sans;
-@headings-font:             'Tungsten', sans-serif;
+@body-font:                 @font-serif;
+@headings-font:             @font-sans;
 
 
 // Branding
-@brand-primary:             #292929;
-@brand-secondary:           #8ba86b;
+@brand-primary:             #212121;
+@brand-secondary:           #bd9756;
 @brand-accent:              #8ba86b;
-@brand-gray:                #f2f2f2;
+@brand-gray:                #f4f4f4;
 
 
 
 // Theming
 @body-color:                white;
-@text-color:                #666;
+@text-color:                @brand-primary;
 @heading-color:             @brand-primary;
 
 @link-color:                @brand-secondary;
 @link-hover-color:         	@text-color;
 
 
-@border-color:              @blue-grey-100;
-@border-radius:             3px;
+@border-color:              rgba(0,0,0,0.1);
+@border-radius:             0;
 
 // Social Colors
 @twitter:                   #00aced;
@@ -59,8 +61,8 @@
 
 // COMMON
 
-@header-height:             60px;
-@header-height-tall:        90px;
+@header-height:             72px;
+@header-height-tall:        105px;
 
 @footer-height:             500px;
 @footer-height-sm:          500px;

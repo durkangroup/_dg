@@ -1,0 +1,71 @@
+// Variable
+@transition-duration: .5s;
+@overlay-bg-color: rgba(255,255,255,.85);
+
+// Rules
+.fluidbox {
+  outline: none;
+  cursor: zoom-in;
+  &.fluidbox-opened {
+    cursor: zoom-out;
+  }
+}
+.fluidbox-overlay {
+  background-color: @overlay-bg-color;
+  cursor: pointer;
+  cursor: zoom-out;
+  opacity: 0;
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  // Transition time for overlay is halved to ensure that flickering doesn't happen
+  transition: all @transition-duration/2 ease-in-out @transition-duration/2;
+}
+.fluidbox-wrap {
+  background-position: center center;
+  background-size: cover;
+  margin: 0 auto;
+  position: relative;
+  transition: all @transition-duration ease-in-out;
+  // To prevent flickering, we delay the showing of the image
+  .fluidbox-closed & img { transition: opacity 0s ease-in-out @transition-duration; }
+}
+.fluidbox-ghost {
+  background-size: 100% 100%;
+  background-position: center center;
+  position: absolute;
+  transition-property: opacity, transform;
+  transition-duration: 0s, @transition-duration;
+  transition-delay: @transition-duration, 0s;
+
+  -webkit-transition-property: opacity, -webkit-transform; /* autoprefixer: off */
+  transition-property: opacity, -webkit-transform; /* autoprefixer: off */
+  transition-property: opacity, transform; /* autoprefixer: off */
+
+  .fluidbox-opened & { transition-delay: 0s, 0s; }
+}
+
+
+
+.img-caption {
+  opacity: 0;
+  background: rgba(255,255,255,0.5);
+  width: 100%;
+  padding: 16px;
+  text-align: center;
+  position: fixed;
+  bottom: 2.5%;
+  left: 0;
+  transform: translateY(100%);
+  z-index: 1060;
+  transition: all @transition-duration ease-in-out;
+
+  &.visible {
+    opacity: 1;
+    transform: translateY(0);
+    transition: all @transition-duration ease-in-out;
+  }
+
+}

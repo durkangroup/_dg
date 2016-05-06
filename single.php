@@ -1,26 +1,44 @@
 <?php get_header(); ?>
 
-<main id="main" class="site-main" role="main">
+<header id="aspot" class="post-header" data-height="half">
+  <div class="bg-img" style="background-image: url('<?php echo get_field('cover_image')['sizes']['article-cover']; ?>');"></div>
+  <div class="inner">
+    <div class="container vert-center">
+      <div class="row">
 
-  <header class="page-header">
-    <div class="container">
-      <h1 class="page-title"><?php echo get_the_title( get_option( 'page_for_posts' )); ?></h1>
+        <div class="col-md-10 col-md-offset-1 col-title">
+          <h1 class="post-title"><?php the_title(); ?></h1>
+        </div>
+
+      </div>
     </div>
-  </header>
-
-  <div class="container">
-
-  	<?php while ( have_posts() ) : the_post(); ?>
-
-  		<?php get_template_part( 'template-parts/content', 'single' ); ?>
-
-  		<?php if ( comments_open() || get_comments_number() ) : comments_template(); endif; ?>
-
-      <?php // the_post_navigation(); ?>
-
-  	<?php endwhile; ?>
-
   </div>
+</header>
+
+<main id="main" data-page="page-article">
+
+  <?php while ( have_posts() ) : the_post(); ?>
+
+  <article <?php post_class(); ?>>
+
+    <cite class="by-line">
+      <span>by</span> <?php the_author_meta('first_name'); ?> <?php the_author_meta('last_name'); ?> - <time class="updated" datetime="<?php get_the_time('Y-m-j') ?>"><?php echo get_the_time('M j Y') ?></time>
+    </cite>
+
+    <div class="post-content">
+
+      <?php the_content(); ?>
+
+    </div>
+
+    <footer class="post-footer">
+      <?php // _dg_entry_footer(); ?>
+    </footer>
+
+  </article>
+
+  <?php endwhile; ?>
+
 </main>
 
 <?php // get_sidebar(); ?>

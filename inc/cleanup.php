@@ -134,7 +134,7 @@ add_filter('comment_id_fields', 'remove_self_closing_tags');
 add_filter('post_thumbnail_html', 'remove_self_closing_tags');
 // add_filter('post_thumbnail_html', 'remove_thumbnail_dimensions', 10);
 // add_filter('image_send_to_editor', 'remove_thumbnail_dimensions', 10);
-
+add_filter('wp_calculate_image_srcset_meta', '__return_null'); // DISABLE RESPONSIVE IMAGES
 
 // REMOVE FILTERS
 remove_filter('the_excerpt', 'wpautop');

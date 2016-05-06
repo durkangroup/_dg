@@ -1,9 +1,10 @@
 //@prepros-prepend plugins/scrollto.js
 //@prepros-prepend plugins/slick.js
+//@prepros-prepend plugins/matchHeight.js
 //@prepros-prepend plugins/blazy.js
+//@prepros-prepend plugins/fluidbox.js
 
 /* //@prepros-prepend plugins/smoothstate.js */
-/* //@prepros-prepend plugins/matchHeight.js */
 /* //@prepros-prepend plugins/sticky.js */
 
 $(function($){
@@ -146,6 +147,27 @@ _dg.preloadBgs = function(){
 
 };
 
+_dg.aSpots = function(){
+
+  // SET ASPOT HEIGHTS IN PX
+  var windowHeight = $(window).height();
+  var aspotHeight = $('#aspot').height();
+
+  $('#aspot[data-height="half"]').css('height', aspotHeight+'px');
+  $('#aspot[data-height="full"]').css('height', windowHeight+'px');
+
+  // NO HEIGHT RESIZE ON MOBILE
+  var windowHeight = $(window).height();
+  var windowWidth = $(window).width();
+  if ( windowWidth >= 840 ) {
+    $(window).bind('resize', function(){
+      windowHeight = $(window).height();
+      $('#aspot[data-height="full"]').css('height', windowHeight+'px');
+    });
+  }
+
+};
+
 _dg.slick = function(){
 
   $('[data-slick]').slick({
@@ -167,6 +189,22 @@ _dg.slick = function(){
 
 };
 
+_dg.fluidbox = function(){
+
+  $("a[href$='.jpg']").each(function(){
+    if($(this).find("img").length > 0) {
+      $(this).addClass('isfluid');
+    }
+  });
+
+  $('.isfluid').fluidbox({
+    closeTrigger: [
+      { selector: 'window', event: 'scroll'}
+    ]
+  });
+
+};
+
 var bLazy = new Blazy({
   offset: 600,
   breakpoints: [{
@@ -183,7 +221,9 @@ $(function() {
   _dg.scrolls();
   _dg.toggleNav();
   _dg.preloadBgs();
+  _dg.aSpots();
   _dg.slick();
+  _dg.fluidbox();
 });
 
 });

@@ -7,7 +7,7 @@
 h1, h2, h3, h4, h5, h6 {
   color: @heading-color;
   font-family: @headings-font;
-  font-weight: 600;
+  font-weight: 700;
   line-height: 1.1;
   margin: (@margin*2) 0 @margin 0;
 
@@ -25,24 +25,29 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h1 {
-  font-size: 1.75rem;
-  letter-spacing: 0.05em;
+  font-size: 100px;
 }
 
 h2 {
-  font-size: 1.5rem;
+  font-size: 70px;
+  font-weight: 500;
 }
 
 h3 {
-  font-size: 1.3rem;
+  font-family: @font-sans-alt;
+  font-size: 44px;
+  font-weight: 500;
+  text-transform: uppercase;
 }
 
 h4 {
-  font-size: 1.2rem;
+  font-family: @font-serif-alt;
+  font-size: 28px;
 }
 
 h5 {
-  font-size: 1.1rem;
+  font-size: 26px;
+  font-weight: 500;
 }
 
 h6 {
@@ -91,10 +96,9 @@ code,
 kbd,
 pre,
 samp {
-  font-weight: 600;
   font-family: @font-fixed;
-  font-size: 1rem;
-  line-height: 1.5;
+  font-size: 0.8rem;
+  line-height: @line-height;
 }
 
 kbd {
@@ -108,34 +112,28 @@ kbd {
 }
 
 code {
-  line-height: 1.25;
-  padding: 5px;
-  border-radius: @border-radius;
-  background: @blue-grey-100;
   padding: @margin;
   margin: @margin;
   display: block;
   @media @mobile {
     margin: @margin 0;
   }
+  &::selection {
+    color: @body-color;
+    background: @brand-primary;
+  }
 }
 
 pre {
-  color: @blue-grey-500;
   word-break: break-all;
   word-wrap: break-word;
   white-space: nowrap;
-  background: #fff;
   margin: @margin;
-  background: @blue-grey-100;
-  border-radius: @border-radius;
   display: block;
   @media @mobile {
     margin: @margin 0;
   }
   code {
-    color: @blue-grey-500;
-    padding: 0;
     padding: @margin;
     margin: 0;
     white-space: pre-wrap;

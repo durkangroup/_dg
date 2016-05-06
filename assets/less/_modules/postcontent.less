@@ -1,0 +1,583 @@
+.post-content {
+  text-align: center;
+  margin: 0 auto;
+  clear: both;
+  position: relative;
+
+  p:first-child em strong,
+  p:first-child strong em {
+    font-size: 1.5em;
+    line-height: 1.25;
+    font-weight: 400;
+    font-style: normal;
+    @media (min-width: 720px) {
+      line-height: 1.5;
+    }
+  }
+
+  /*
+  p:first-child em strong,
+  p:first-child strong em  {
+    font-size: 54px;
+    font-weight: 700;
+    height: 54px;
+    line-height: 59px;
+    padding-right: 8px;
+    font-style: normal;
+    float: left
+  }
+  */
+
+
+  > p,
+  > h2,
+  > h3,
+  > h4,
+  > h5,
+  > ul,
+  > ol,
+  > .wp-slick-slider {
+    margin-left: auto;
+    margin-right: auto;
+    @media (min-width: 600px) {
+      max-width: 600px;
+    }
+    // @media (min-width: 960px) {
+    //   max-width: 640px;
+    // }
+    @media (min-width: 1200px) {
+      max-width: 800px;
+    }
+  }
+
+  h2 {
+    color: @brand-secondary;
+    font-family: @font-sans-alt;
+    font-size: 44px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.1rem;
+    margin-bottom: .75rem;
+  }
+
+  h3 {
+    font-family: @font-sans;
+    font-size: 26px;
+    font-weight: 500;
+    text-transform: none;
+    margin-bottom: .75rem;
+  }
+
+  h3+h4 {
+    color: @brand-secondary;
+    font-family: @font-serif;
+    font-size: 16px;
+    font-weight: 400;
+    margin-top: 0;
+  }
+
+  h5 {
+  }
+
+  ol,
+  ul {
+    list-style: none;
+    margin-top: @margin;
+    margin-bottom: @margin;
+    counter-reset: post;
+    li {
+      margin-left: 25px;
+      margin-bottom: @margin * 0.5;
+      &:last-child {
+        margin-bottom: 0;
+      }
+      &:before {
+        font-size: 1rem;
+        width: 25px;
+        margin-left: -25px;
+        padding-right: 10px;
+        box-sizing: content-box;
+        position: absolute;
+        display: inline-block;
+      }
+    }
+  }
+  ol {
+    li {
+      &:before {
+        font-weight: 700;
+        margin-left: -30px;
+        counter-increment: post;
+        content: counter(post) ".";
+        text-align: right;
+      }
+    }
+  }
+  ul {
+    li {
+      &:before {
+        content: '•';
+        width: 20px;
+        line-height: 1.2;
+        text-align: center;
+      }
+    }
+  }
+
+  li a,
+  p a {
+    &:hover {
+    }
+  }
+
+  blockquote {
+    border: 0;
+    margin: @margin  auto;
+    max-width: 100%;
+    position: relative;
+
+    @media (min-width: 600px) {
+      max-width:600px;
+    }
+    @media (min-width: 960px) {
+      max-width:800px;
+      margin: (@margin * 2) auto;
+    }
+    @media (min-width: 1200px) {
+      max-width:960px;
+    }
+
+
+    p {
+      color: @brand-secondary;
+      font-family: @font-sans;
+      font-size: 1.2em;
+      font-weight: 500;
+      line-height: 1.2;
+      font-style: normal;
+      padding: 0;
+      position: relative;
+    }
+
+  }
+
+  code {
+    margin: @margin auto;
+  }
+
+  pre {
+    margin: @margin auto;
+    @media (min-width: 600px) {
+      max-width: 600px;
+    }
+    @media (min-width: 1200px) {
+      max-width: 800px;
+    }
+    code {
+      border: 1px solid @border-color;
+      background: @brand-gray;
+      white-space: pre;
+      overflow-x: auto;
+      @media (max-width: 959px) {
+        padding: 1rem;
+      }
+    }
+  }
+
+
+  .wp-slick-slider {
+    padding: 0 25px;
+    text-align: center;
+    figure {
+      padding: 0;
+    }
+    &.post-full {
+      padding: 0;
+      max-width: 100%;
+
+      .slick-prev {
+        left: 20px;
+        @media @sm-max {
+          left: 0;
+        }
+      }
+      .slick-next {
+        right: 20px;
+        @media @sm-max {
+          right: 0;
+        }
+      }
+      .slick-prev,
+      .slick-next, {
+        @media @sm-max {
+          width: 48px;
+          right: 0;
+        }
+        &:before{
+          font-size: 48px;
+          color: #fff;
+          @media @sm-max {
+            font-size: 32px;
+          }
+        }
+      }
+
+      figure {
+        padding: 0;
+      }
+    }
+    &.post-wide {
+      @media (min-width: 720px) {
+        max-width:720px
+      }
+      @media (min-width: 800px) {
+        max-width:800px
+      }
+      @media (min-width: 960px) {
+        max-width:960px
+      }
+      @media (min-width: 1200px) {
+        max-width:1200px
+      }
+    }
+    &.post-size {
+      @media (min-width: 600px) {
+        max-width:600px
+      }
+      @media (min-width:1200px) {
+        max-width:800px;
+      }
+    }
+  }
+
+
+  [data-slick] {
+    figure {
+      background: @body-color;
+      margin: 0;
+    }
+    img {
+      width: 100%;
+      padding: 0;
+      margin: 0;
+    }
+    figcaption {
+      font-family: @font-sans;
+      text-align: left;
+      width: 100%;
+      overflow: hidden;
+    }
+    .slick-prev {
+      left: -56px;
+      @media @sm-max {
+        left: 0;
+      }
+    }
+    .slick-next {
+      right: -56px;
+      @media @sm-max {
+        right: 0;
+      }
+    }
+    .slick-prev,
+    .slick-next, {
+      width: 56px;
+      height: 56px;
+      margin-top: -28px;
+      z-index: 1000;
+      @media @sm-max {
+        width: 25px;
+      }
+      &:before{
+        font-size: 32px;
+        color: #1e1e1e;
+        @media @sm-max {
+          font-size: 24px;
+        }
+      }
+    }
+    &.post-size,
+    &.post-wide,
+    &.post-full {
+      margin-top: @margin;
+      margin-bottom: @margin;
+      &:first-child {
+        margin-top: 0;
+      }
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+    &.post-full figure {
+      position: relative;
+      margin: 0;
+    }
+    &.post-full figcaption {
+      font-family: @font-sans;
+      color: @body-color;
+      font-size: 0.8em;
+      font-weight: 400;
+      text-align: left;
+      max-width: 100%;
+      left: 0;
+      right: 0;
+      position: absolute;
+      bottom: 0;
+      display: block;
+    }
+    &.post-full figcaption.has--caption {
+      padding: 120px 27.5% 25px 25px;
+      background: url('../img/ui/figcaption-grad.png') repeat-x center bottom;
+      background: linear-gradient(to top, rgba(37, 43, 51, 0.25) 0, rgba(37, 43, 51, 0) 100%);
+      opacity: 0;
+      transition: all .2s ease 0s;
+      @media @sm-max {
+        padding: 120px 25px 15px 25px;
+        text-align: center;
+      }
+    }
+    &.post-full .slick-active figcaption.has--caption {
+      opacity: 1;
+      transition-delay: 0.4s;
+    }
+  }
+
+  > *:not(img) {
+    text-align: left;
+    padding-left: 25px;
+    padding-right: 25px;
+  }
+
+  > *:not(figure) {
+    text-align: left;
+  }
+
+  figure {
+
+  }
+
+  img {
+    max-width: 100%;
+    margin-left: auto;
+    margin-right:auto;
+
+    @media @xs-max {
+      // margin-left: -25px;
+      // margin-right: -25px;
+    }
+
+    &.size-post-full {
+      width: 100%;
+      + .wp-caption-text {
+        font-family: @font-sans;
+        color: @body-color;
+        font-size: 0.8em;
+        text-align: left;
+        max-width: 100%;
+        left: 0;
+        right: 0;
+        position: absolute;
+        bottom: 0;
+        padding: 120px 27.5% 25px 25px;
+        background: url('../img/ui/figcaption-grad.png') repeat-x center bottom;
+        background: linear-gradient(to top, rgba(37, 43, 51, 0.25) 0, rgba(37, 43, 51, 0) 100%);
+        display: block;
+        @media @sm-max {
+          padding: 120px 25px 15px 25px;
+          text-align: center;
+        }
+      }
+    }
+
+    &.size-post-wide {
+      @media (max-width: 719px) {
+        width: 100%;
+      }
+      @media (min-width: 720px) {
+        max-width:670px;
+      }
+      @media (min-width: 800px) {
+        max-width:750px;
+      }
+      @media (min-width: 960px) {
+        max-width:910px;
+      }
+      @media (min-width: 1200px) {
+        max-width:1150px;
+      }
+    }
+
+    &.size-post-size {
+      @media (max-width: 599px) {
+        width: 100%;
+      }
+      @media (min-width: 600px) {
+        max-width: 550px;
+      }
+      @media (min-width: 1200px) {
+        max-width: 750px;
+      }
+    }
+
+  }
+
+  figure {
+    max-width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    span {
+      margin: 0 auto;
+      display: inline-block;
+    }
+    a {
+      display: inline-block;
+    }
+
+    &.size-full {
+      width: 100%;
+      padding-left: 0;
+      padding-right: 0;
+      @media (max-width: 799px) {
+        padding: 0 25px;
+      }
+    }
+    &.size-wide {
+      @media (max-width: 719px) {
+        padding: 0 25px;
+        width: 100%;
+      }
+      @media (min-width: 720px) {
+        max-width:670px;
+      }
+      @media (min-width: 800px) {
+        max-width:750px;
+      }
+      @media (min-width: 960px) {
+        max-width:910px;
+      }
+      @media (min-width: 1200px) {
+        max-width:1150px;
+      }
+    }
+    &.size-post {
+      @media (max-width: 599px) {
+        padding: 0 25px;
+        width: 100%;
+      }
+      @media (min-width: 600px) {
+        max-width: 550px;
+      }
+      @media (min-width: 1200px) {
+        max-width: 750px;
+      }
+    }
+    &.width-1600 {
+      padding: 0;
+      max-width: 100%;
+      span {
+        margin: 0 auto;
+        display: block;
+      }
+    }
+    &.wp-caption {
+      font-family: @font-sans;
+      position: relative;
+      // margin-bottom: 3rem;
+    }
+    figcaption {
+      font-family: @font-sans;
+      color: #aaa;
+      font-size: 0.8em;
+      line-height: 1.2;
+      max-width: 600px;
+      margin: 0;
+      padding-top: 10px;
+      @media (max-width: 600px) {
+        padding-left: 25px;
+        padding-right: 25px;
+      }
+    }
+  }
+
+  .wp-caption {
+    figcaption,
+    .wp-caption-text {
+      font-family: @font-sans;
+      color: #aaa;
+      font-size: 0.8em;
+      line-height: 1.2;
+      max-width: 600px;
+      margin: 0;
+      padding-top: 10px;
+      @media (max-width: 600px) {
+        padding-left: 25px;
+        padding-right: 25px;
+      }
+    }
+  }
+
+  .video-container {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 600px;
+
+    @media (min-width: 720px) {
+      max-width:720px;
+    }
+    @media (min-width: 800px) {
+      max-width:800px;
+    }
+    @media (min-width: 960px) {
+      max-width:960px;
+    }
+    @media (min-width: 1200px) {
+      max-width:1200px;
+    }
+
+    div {
+      width:100%;
+      position:relative;
+      padding-bottom: 56.25%;
+      iframe,
+      object,
+      embed {
+        position:absolute;
+        top:0;
+        left:0;
+        width:100%;
+        height:100%;
+      }
+    }
+
+  }
+
+  figure {
+    margin-top: @margin;
+    margin-bottom: @margin;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    img {
+      display: block;
+    }
+
+  }
+
+}
+
+
+/* image gallery styles */
+.gallery {
+  dl {
+    float: left;
+    margin-top: 10px;
+    text-align: center;
+    width: 33%;
+    img {
+      border: 2px solid #cfcfcf;
+    }
+  }
+} /* end .gallery */

@@ -21,14 +21,19 @@ function _dg_setup() {
 
   set_post_thumbnail_size(160, 160, true);
 
+  add_image_size('post-small', 200, 9999);
+  add_image_size('post-half', 400, 9999);
   add_image_size('post-size', 800, 9999);
-  add_image_size('max-size', 1600, 900, true);
+  add_image_size('post-wide', 1000, 9999);
+  add_image_size('post-full', 1600, 800, true);
 
   add_image_size('post-featured-xs', 480, 240, true);
   add_image_size('post-featured-sm', 640, 320, true);
   add_image_size('post-featured-md', 800, 400, true);
   add_image_size('post-featured-lg', 1280, 640, true);
   add_image_size('post-featured-xl', 1600, 800, true);
+
+  add_image_size('article-cover', 1600, 900, true);
 
 }
 endif;
@@ -92,5 +97,6 @@ include_once(TEMPLATEPATH.'/inc/sidebars.php');
 include_once(TEMPLATEPATH.'/inc/widgets.php');
 include_once(TEMPLATEPATH.'/inc/excerpts.php');
 include_once(TEMPLATEPATH.'/inc/gravityforms.php');
+include_once(TEMPLATEPATH.'/inc/shortcode-slick.php');
 
 include_once(TEMPLATEPATH.'/plugins/bs-shortcodes.php');

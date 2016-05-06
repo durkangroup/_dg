@@ -1,15 +1,15 @@
 @charset "UTF-8";
 @font-face {
   font-family: '_dgicons';
-  src: url('//harmangroup.durkancloud.xyz/wp-content/themes/_dg/assets/fonts/_dgicons/_dgicons.eot?-f3vtrf');
-  src: url('//harmangroup.durkancloud.xyz/wp-content/themes/_dg/assets/fonts/_dgicons/_dgicons.eot?#iefix-f3vtrf') format('embedded-opentype'), url('//harmangroup.durkancloud.xyz/wp-content/themes/_dg/assets/fonts/_dgicons/_dgicons.ttf?-f3vtrf') format('truetype'), url('//harmangroup.durkancloud.xyz/wp-content/themes/_dg/assets/fonts/_dgicons/_dgicons.woff?-f3vtrf') format('woff'), url('//harmangroup.durkancloud.xyz/wp-content/themes/_dg/assets/fonts/_dgicons/_dgicons.svg?-f3vtrf#_dgicons') format('svg');
+  src: url('//raabcollection.durkancloud.xyz/wp-content/themes/_dg/assets/fonts/_dgicons/_dgicons.eot?-ukf82u');
+  src: url('//raabcollection.durkancloud.xyz/wp-content/themes/_dg/assets/fonts/_dgicons/_dgicons.eot?#iefix-ukf82u') format('embedded-opentype'), url('//raabcollection.durkancloud.xyz/wp-content/themes/_dg/assets/fonts/_dgicons/_dgicons.ttf?-ukf82u') format('truetype'), url('//raabcollection.durkancloud.xyz/wp-content/themes/_dg/assets/fonts/_dgicons/_dgicons.woff?-ukf82u') format('woff'), url('//raabcollection.durkancloud.xyz/wp-content/themes/_dg/assets/fonts/_dgicons/_dgicons.svg?-ukf82u#_dgicons') format('svg');
   font-weight: normal;
   font-style: normal;
 }
 @media screen and (-webkit-min-device-pixel-ratio: 0) {
   @font-face {
     font-family: '_dgicons';
-    src: url('//harmangroup.durkancloud.xyz/wp-content/themes/_dg/assets/fonts/_dgicons/_dgicons.svg?-f3vtrf#_dgicons') format('svg');
+    src: url('//raabcollection.durkancloud.xyz/wp-content/themes/_dg/assets/fonts/_dgicons/_dgicons.svg?-ukf82u#_dgicons') format('svg');
   }
 }
 [class^="_dgicon-"],
@@ -45,6 +45,9 @@
 }
 ._dgicon-the-d:before {
   content: "\e610";
+}
+._dgicon-mouse2:before {
+  content: "\e60f";
 }
 ._dgicon-location:before {
   content: "\e90d";
@@ -113,7 +116,7 @@
   content: "\ec00";
 }
 ._dgicon-google-old:before {
-  content: "\e60f";
+  content: "\e611";
 }
 ._dgicon-gplus-old:before {
   content: "\ec01";
@@ -138,6 +141,9 @@
 }
 ._dgicon-houzz:before {
   content: "\e605";
+}
+._dgicon-youtube:before {
+  content: "\e90e";
 }
 ._dgicon-wp:before {
   content: "\e602";
