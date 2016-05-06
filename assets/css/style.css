@@ -1582,8 +1582,15 @@ address {
   -webkit-transition: all 0.25s ease-out;
           transition: all 0.25s ease-out;
 }
-.menu-toggle:hover {
-  background: transparent;
+.no-touchevents .menu-toggle:hover {
+  color: white;
+  background: #bd9756;
+}
+.menu-toggle:active {
+  color: white;
+  background: #bd9756;
+  -webkit-transition: none;
+          transition: none;
 }
 @media (max-width: 959px) {
   .menu-toggle {

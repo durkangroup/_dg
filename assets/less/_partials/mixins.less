@@ -196,3 +196,15 @@
   }
 
 }
+
+.mobileHover(@color, @bgcolor) {
+  .no-touchevents &:hover {
+    color: @color;
+    background: @bgcolor;
+  }
+  &:active {
+    color: @color;
+    background: @bgcolor;
+    transition: none;
+  }
+}
