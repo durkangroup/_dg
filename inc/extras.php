@@ -102,7 +102,8 @@ function add_image_insert_override($size_names){
     'post-half' => __('Half Width'),
     'post-size' => __('Post Width'),
     'post-wide' => __('Wide Width'),
-    'post-full' => __('Window Width')
+    'post-full' => __('Window Width'),
+    'full'      => __('Full Size')
   );
   return $size_names;
 };

@@ -37,24 +37,30 @@ add_filter('tiny_mce_before_init', 'custom_tinymce_config');
 
 // REMOVE REVISIONS META BOX AND RECREATE ON RIGHT SIDE FOR ALL POST TYPES
 function relocate_revisions_metabox() {
-	$args = array(
-	'public'   => true,
-	'_builtin' => false
-	);
-	$output = 'names'; // names or objects
-	$post_types = get_post_types($args,$output);
-	foreach ($post_types  as $post_type) {
-		remove_meta_box('revisionsdiv',$post_type,'normal');
-		add_meta_box('revisionssidediv2', __('Revisions'), 'post_revisions_meta_box', $post_type, 'side', 'low');
-	}
+  $args = array(
+  'public'   => true,
+  '_builtin' => false
+  );
+  $output = 'names'; // names or objects
+  $post_types = get_post_types($args,$output);
+  foreach ($post_types  as $post_type) {
+    remove_meta_box('revisionsdiv',$post_type,'normal');
+    add_meta_box('revisionssidediv2', __('Revisions'), 'post_revisions_meta_box', $post_type, 'side', 'low');
+    remove_meta_box('authordiv',$post_type,'normal');
+    add_meta_box('authorsidediv2', __('Author'), 'post_author_meta_box', $post_type, 'side', 'low');
+  }
 
-	// PAGE
-	remove_meta_box('revisionsdiv','page','normal');
-	add_meta_box('revisionssidediv2', __('Revisions'), 'post_revisions_meta_box', 'page', 'side', 'low');
+  // PAGE
+  remove_meta_box('revisionsdiv','page','normal');
+  add_meta_box('revisionssidediv2', __('Revisions'), 'post_revisions_meta_box', 'page', 'side', 'low');
+  remove_meta_box('authordiv','page','normal');
+  add_meta_box('authorsidediv2', __('Author'), 'post_author_meta_box', 'page', 'side', 'low');
 
-	// POST
-	remove_meta_box('revisionsdiv','post','normal');
-	add_meta_box('revisionssidediv2', __('Revisions'), 'post_revisions_meta_box', 'post', 'side', 'low');
+  // POST
+  remove_meta_box('revisionsdiv','post','normal');
+  add_meta_box('revisionssidediv2', __('Revisions'), 'post_revisions_meta_box', 'post', 'side', 'low');
+  remove_meta_box('authordiv','post','normal');
+  add_meta_box('authorsidediv2', __('Author'), 'post_author_meta_box', 'post', 'side', 'low');
 
 }
 add_action('admin_init','relocate_revisions_metabox');
@@ -178,22 +184,14 @@ function dashboard_logo() {
 }
 */
 
-
-
-/*
- * Remove the WordPress Logo from the WordPress Admin Bar
- */
+// REMOVE WORDPRESS LOGO
 function remove_wp_logo() {
     global $wp_admin_bar;
     $wp_admin_bar->remove_menu('wp-logo');
 }
 add_action( 'wp_before_admin_bar_render', 'remove_wp_logo' );
 
-
-/*
- * Add a menu, with a dropdown to link that opens in a new window
- * Change the Menu title, the link title and and href link.
- */
+// CUSTOM LOGO MENU
 function custom_adminbar_menu( $meta = TRUE ) {
   global $wp_admin_bar;
     if ( !is_user_logged_in() ) { return; }

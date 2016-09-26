@@ -5,6 +5,8 @@
 if ( ! function_exists( '_dg_setup' ) ) :
 function _dg_setup() {
 
+  $content_width = 760;
+
   load_theme_textdomain( '_dg', get_template_directory() . '/languages' );
 
   add_theme_support( 'automatic-feed-links' );
@@ -45,7 +47,7 @@ function _dg_styles() {
   wp_register_style('fonts', get_template_directory_uri() . '/assets/css/fonts.css', array(), '1.0', 'all');
   wp_enqueue_style('fonts');
 
-  wp_register_style('style', get_template_directory_uri() . '/assets/css/style.css', array(), '1.0', 'all');
+  wp_register_style('style', get_template_directory_uri() . '/assets/css/style.css?'. filemtime(get_stylesheet_directory() . '/assets/css/style.css'));
   wp_enqueue_style('style');
 
 }
@@ -54,17 +56,12 @@ function _dg_styles() {
 function _dg_scripts() {
   if ($GLOBALS['pagenow'] != 'wp-login.php' && !is_admin()) {
 
-    // HEAD
-    wp_register_script('modernizr', get_template_directory_uri() . '/assets/js/modernizr.js', array(), '3.2.0', false);
-    wp_enqueue_script('modernizr');
-
     // FOOT
-    wp_deregister_script('jquery');
-    wp_register_script('jquery', get_template_directory_uri() . '/assets/js/jquery.min.js', array(), '1.11.1', true);
-    wp_enqueue_script('jquery');
+    wp_register_script('vendor', get_template_directory_uri() . '/assets/js/vendor.js?'. filemtime(get_stylesheet_directory() . '/assets/js/vendor.js'), array(), '1.0', true );
+    wp_enqueue_script('vendor');
 
-    wp_register_script('main', get_template_directory_uri() . '/assets/js/main.min.js', array('jquery'), '1.0', true );
-    wp_enqueue_script('main');
+    wp_register_script('app', get_template_directory_uri() . '/assets/js/app.js?'. filemtime(get_stylesheet_directory() . '/assets/js/app.js'), array('vendor'), '1.0', true );
+    wp_enqueue_script('app');
 
   }
 }
@@ -100,3 +97,6 @@ include_once(TEMPLATEPATH.'/inc/gravityforms.php');
 include_once(TEMPLATEPATH.'/inc/shortcode-slick.php');
 
 include_once(TEMPLATEPATH.'/plugins/bs-shortcodes.php');
+
+// SMOOTH STATE ANIMATION
+$smoothAnimation = "scene_element--fadein";

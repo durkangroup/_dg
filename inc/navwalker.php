@@ -52,7 +52,7 @@ class wp_navwalker extends Walker_Nav_Menu {
     } else if ( strcasecmp( $item->attr_title, 'dropdown-header') == 0 && $depth === 1 ) {
       $output .= $indent . '<li role="presentation" class="dropdown-header">' . esc_attr( $item->title );
     } else if ( strcasecmp($item->attr_title, 'disabled' ) == 0 ) {
-      $output .= $indent . '<li role="presentation" class="disabled"><a href="#">' . esc_attr( $item->title ) . '</a>';
+      $output .= $indent . '<li role="presentation" class="disabled"><a href="#"><span>' . esc_attr( $item->title ) . '</span></a>';
     } else {
 
       $class_names = $value = '';
@@ -82,8 +82,8 @@ class wp_navwalker extends Walker_Nav_Menu {
 
       // If item has_children add atts to a.
       if ( $args->has_children && $depth === 0 ) {
-        $atts['href']       = '#';
-        $atts['data-toggle']  = 'dropdown';
+        $atts['href'] = ! empty( $item->url ) ? $item->url : '';
+        $atts['data-dropdown']  = 'dropdown';
         $atts['class']      = 'dropdown-toggle';
         $atts['aria-haspopup']  = 'true';
       } else {
@@ -112,10 +112,10 @@ class wp_navwalker extends Walker_Nav_Menu {
       if ( ! empty( $item->attr_title ) )
         $item_output .= '<a'. $attributes .'><i class="entypo-' . esc_attr( $item->attr_title ) . '"></i> <span>';
       else
-        $item_output .= '<a'. $attributes .'>';
+        $item_output .= '<a'. $attributes .'><span>';
 
       $item_output .= apply_filters( 'the_title', $item->title, $item->ID ) . $args->link_after;
-      $item_output .= ( $args->has_children && 0 === $depth ) ? ' <i class="caret"></i></a>' : '</span></a>';
+      $item_output .= ( $args->has_children && 0 === $depth ) ? ' </a><i class="caret"></i>' : '</span></a>';
       $item_output .= $args->after;
 
       $output .= apply_filters( 'walker_nav_menu_start_el', $item_output, $item, $depth, $args );
