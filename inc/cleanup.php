@@ -48,7 +48,7 @@ function my_remove_recent_comments_style() {
 
 
 // REMOVE 'TEXT/CSS' FROM OUR ENQUEUED STYLESHEET
-function _dg_style_remove($tag) {
+function _pc_style_remove($tag) {
   return preg_replace('~\s+type=["\'][^"\']++["\']~', '', $tag);
 }
 
@@ -126,9 +126,9 @@ add_filter('wp_nav_menu_args', 'my_wp_nav_menu_args');
 add_filter('the_category', 'remove_category_rel_from_category_list');
 add_filter('the_excerpt', 'shortcode_unautop');
 add_filter('the_excerpt', 'do_shortcode');
-add_filter('style_loader_tag', '_dg_style_remove');
+add_filter('style_loader_tag', '_pc_style_remove');
 add_filter('image_size_names_choose', 'add_image_insert_override');
-// add_filter('image_send_to_editor', '_dg_insert_image', 10, 9 );
+// add_filter('image_send_to_editor', '_pc_insert_image', 10, 9 );
 add_filter('get_avatar', 'remove_self_closing_tags');
 add_filter('comment_id_fields', 'remove_self_closing_tags');
 add_filter('post_thumbnail_html', 'remove_self_closing_tags');

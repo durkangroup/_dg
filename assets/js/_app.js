@@ -2,9 +2,9 @@ $(function($){
 
   'use strict';
 
-  var _dg = window._dg || {};
+  var _pc = window._pc || {};
 
-_dg.scrolls = function() {
+_pc.scrolls = function() {
 
   // NEXT OR FIRST
   $.fn.nextOrFirst = function(selector) {
@@ -72,7 +72,7 @@ _dg.scrolls = function() {
 
 };
 
-_dg.toggleNav = function(){
+_pc.toggleNav = function(){
 
   $('[data-toggle="menu"]').on('click', function (e) {
     e.preventDefault();
@@ -111,7 +111,7 @@ _dg.toggleNav = function(){
 
 };
 
-_dg.preloadBgs = function(){
+_pc.preloadBgs = function(){
 
   $('.set-bg').each(function(index) {
     $(this).css({ 'background-image':'url(' + $(this).data('bg') + ')' });
@@ -138,7 +138,7 @@ _dg.preloadBgs = function(){
 
 };
 
-_dg.aSpots = function(){
+_pc.aSpots = function(){
 
   // SET ASPOT HEIGHTS IN PX
   var windowHeight = $(window).height();
@@ -159,7 +159,7 @@ _dg.aSpots = function(){
 
 };
 
-_dg.slick = function(){
+_pc.slick = function(){
 
   $('[data-slick]').slick({
     lazyLoad: 'progressive',
@@ -180,7 +180,7 @@ _dg.slick = function(){
 
 };
 
-_dg.fluidbox = function(){
+_pc.fluidbox = function(){
 
   $("a[href$='.jpg']").each(function(){
     if($(this).find("img").length > 0) {
@@ -209,12 +209,12 @@ var bLazy = new Blazy({
 
 // INITIALIZE
 $(function() {
-  _dg.scrolls();
-  _dg.toggleNav();
-  _dg.preloadBgs();
-  _dg.aSpots();
-  _dg.slick();
-  _dg.fluidbox();
+  _pc.scrolls();
+  _pc.toggleNav();
+  _pc.preloadBgs();
+  _pc.aSpots();
+  _pc.slick();
+  _pc.fluidbox();
 });
 
 });

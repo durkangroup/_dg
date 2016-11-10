@@ -32,7 +32,7 @@
     </div>
 
     <footer class="post-footer">
-      <?php // _dg_entry_footer(); ?>
+      <?php // _pc_entry_footer(); ?>
     </footer>
 
   </article>

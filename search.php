@@ -4,7 +4,7 @@
 
   <header class="page-header">
     <div class="container">
-      <h1 class="page-title"><?php printf( esc_html__( 'Search Results for: %s', '_dg' ), '<span>' . get_search_query() . '</span>' ); ?></h1>
+      <h1 class="page-title"><?php printf( esc_html__( 'Search Results for: %s', '_pc' ), '<span>' . get_search_query() . '</span>' ); ?></h1>
     </div>
   </header>
 

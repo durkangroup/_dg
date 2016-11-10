@@ -1,21 +1,21 @@
 @charset "UTF-8";
 @import "//fonts.googleapis.com/css?family=Open+Sans%3A300italic%2C400italic%2C600italic%2C300%2C400%2C600&subset=latin%2Clatin-ext";
 @font-face {
-  font-family: '_dgicons';
-  src: url('//raabcollection.durkancloud.xyz/wp-content/themes/_dg/assets/fonts/_dgicons/_dgicons.eot?-ukf82u');
-  src: url('//raabcollection.durkancloud.xyz/wp-content/themes/_dg/assets/fonts/_dgicons/_dgicons.eot?#iefix-ukf82u') format('embedded-opentype'), url('//raabcollection.durkancloud.xyz/wp-content/themes/_dg/assets/fonts/_dgicons/_dgicons.ttf?-ukf82u') format('truetype'), url('//raabcollection.durkancloud.xyz/wp-content/themes/_dg/assets/fonts/_dgicons/_dgicons.woff?-ukf82u') format('woff'), url('//raabcollection.durkancloud.xyz/wp-content/themes/_dg/assets/fonts/_dgicons/_dgicons.svg?-ukf82u#_dgicons') format('svg');
+  font-family: '_pcicons';
+  src: url('//raabcollection.durkancloud.xyz/wp-content/themes/_pc/assets/fonts/_pcicons/_pcicons.eot?-ukf82u');
+  src: url('//raabcollection.durkancloud.xyz/wp-content/themes/_pc/assets/fonts/_pcicons/_pcicons.eot?#iefix-ukf82u') format('embedded-opentype'), url('//raabcollection.durkancloud.xyz/wp-content/themes/_pc/assets/fonts/_pcicons/_pcicons.ttf?-ukf82u') format('truetype'), url('//raabcollection.durkancloud.xyz/wp-content/themes/_pc/assets/fonts/_pcicons/_pcicons.woff?-ukf82u') format('woff'), url('//raabcollection.durkancloud.xyz/wp-content/themes/_pc/assets/fonts/_pcicons/_pcicons.svg?-ukf82u#_pcicons') format('svg');
   font-weight: normal;
   font-style: normal;
 }
 @media screen and (-webkit-min-device-pixel-ratio: 0) {
   @font-face {
-    font-family: '_dgicons';
-    src: url('//raabcollection.durkancloud.xyz/wp-content/themes/_dg/assets/fonts/_dgicons/_dgicons.svg?-ukf82u#_dgicons') format('svg');
+    font-family: '_pcicons';
+    src: url('//raabcollection.durkancloud.xyz/wp-content/themes/_pc/assets/fonts/_pcicons/_pcicons.svg?-ukf82u#_pcicons') format('svg');
   }
 }
-[class^="_dgicon-"],
-[class*=" _dgicon-"] {
-  font-family: '_dgicons' !important;
+[class^="_pcicon-"],
+[class*=" _pcicon-"] {
+  font-family: '_pcicons' !important;
   speak: none;
   font-style: normal;
   font-weight: normal;
@@ -26,142 +26,142 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-._dgicon-quote:before {
+._pcicon-quote:before {
   content: "\e904";
 }
-._dgicon-arrowalt-left:before {
+._pcicon-arrowalt-left:before {
   content: "\e900";
 }
-._dgicon-arrowalt-up:before {
+._pcicon-arrowalt-up:before {
   content: "\e901";
 }
-._dgicon-arrowalt-down:before {
+._pcicon-arrowalt-down:before {
   content: "\e902";
 }
-._dgicon-arrowalt-right:before {
+._pcicon-arrowalt-right:before {
   content: "\e903";
 }
-._dgicon-mouse:before {
+._pcicon-mouse:before {
   content: "\e60e";
 }
-._dgicon-the-d:before {
+._pcicon-the-d:before {
   content: "\e610";
 }
-._dgicon-mouse2:before {
+._pcicon-mouse2:before {
   content: "\e60f";
 }
-._dgicon-location:before {
+._pcicon-location:before {
   content: "\e90d";
 }
-._dgicon-launch:before {
+._pcicon-launch:before {
   content: "\e905";
 }
-._dgicon-menu:before {
+._pcicon-menu:before {
   content: "\e600";
 }
-._dgicon-search:before {
+._pcicon-search:before {
   content: "\e60d";
 }
-._dgicon-close:before {
+._pcicon-close:before {
   content: "\e60a";
 }
-._dgicon-chevron-down:before {
+._pcicon-chevron-down:before {
   content: "\e606";
 }
-._dgicon-chevron-up:before {
+._pcicon-chevron-up:before {
   content: "\e609";
 }
-._dgicon-chevron-left:before {
+._pcicon-chevron-left:before {
   content: "\e607";
 }
-._dgicon-chevron-right:before {
+._pcicon-chevron-right:before {
   content: "\e608";
 }
-._dgicon-arrow-up:before {
+._pcicon-arrow-up:before {
   content: "\e906";
 }
-._dgicon-arrow-down:before {
+._pcicon-arrow-down:before {
   content: "\e907";
 }
-._dgicon-arrow-left:before {
+._pcicon-arrow-left:before {
   content: "\e603";
 }
-._dgicon-arrow-right:before {
+._pcicon-arrow-right:before {
   content: "\e604";
 }
-._dgicon-arrowshort-up:before {
+._pcicon-arrowshort-up:before {
   content: "\e909";
 }
-._dgicon-arrowshort-down:before {
+._pcicon-arrowshort-down:before {
   content: "\e90a";
 }
-._dgicon-arrowshort-left:before {
+._pcicon-arrowshort-left:before {
   content: "\e90b";
 }
-._dgicon-arrowshort-right:before {
+._pcicon-arrowshort-right:before {
   content: "\e90c";
 }
-._dgicon-email:before {
+._pcicon-email:before {
   content: "\e60c";
 }
-._dgicon-video:before {
+._pcicon-video:before {
   content: "\e908";
 }
-._dgicon-share:before {
+._pcicon-share:before {
   content: "\e60b";
 }
-._dgicon-facebook:before {
+._pcicon-facebook:before {
   content: "\ebfc";
 }
-._dgicon-google:before {
+._pcicon-google:before {
   content: "\ec00";
 }
-._dgicon-google-old:before {
+._pcicon-google-old:before {
   content: "\e611";
 }
-._dgicon-gplus-old:before {
+._pcicon-gplus-old:before {
   content: "\ec01";
 }
-._dgicon-instagram:before {
+._pcicon-instagram:before {
   content: "\ec02";
 }
-._dgicon-linkedin:before {
+._pcicon-linkedin:before {
   content: "\ec03";
 }
-._dgicon-github:before {
+._pcicon-github:before {
   content: "\ebfe";
 }
-._dgicon-pinterest:before {
+._pcicon-pinterest:before {
   content: "\ec05";
 }
-._dgicon-tumblr:before {
+._pcicon-tumblr:before {
   content: "\ec07";
 }
-._dgicon-twitter:before {
+._pcicon-twitter:before {
   content: "\ec09";
 }
-._dgicon-houzz:before {
+._pcicon-houzz:before {
   content: "\e605";
 }
-._dgicon-youtube:before {
+._pcicon-youtube:before {
   content: "\e90e";
 }
-._dgicon-wp:before {
+._pcicon-wp:before {
   content: "\e602";
 }
-._dgicon-d-sq:before {
+._pcicon-d-sq:before {
   content: "\e601";
 }
 body {
   font-family: "Open Sans", sans-serif;
 }
-#wpadminbar #wp-admin-bar-_dg_logo.menupop {
+#wpadminbar #wp-admin-bar-_pc_logo.menupop {
   cursor: pointer;
 }
-#wpadminbar #wp-admin-bar-_dg_logo .ab-empty-item {
+#wpadminbar #wp-admin-bar-_pc_logo .ab-empty-item {
   padding-left: 8px;
 }
-#wpadminbar #wp-admin-bar-_dg_logo i {
+#wpadminbar #wp-admin-bar-_pc_logo i {
   font-size: 24px;
   width: 24px;
   height: 24px;
@@ -174,7 +174,7 @@ body {
   color: rgba(240, 245, 250, 0.6);
   display: inline-block;
 }
-#wpadminbar #wp-admin-bar-_dg_logo.menupop:hover i {
+#wpadminbar #wp-admin-bar-_pc_logo.menupop:hover i {
   color: #FBBF40;
 }
 #dg-info {
@@ -209,7 +209,7 @@ body {
   padding: 0;
   margin: 0;
   display: block;
-  font-family: '_dgicons';
+  font-family: '_pcicons';
   speak: none;
   font-style: normal;
   font-weight: normal;

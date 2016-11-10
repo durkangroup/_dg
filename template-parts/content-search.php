@@ -6,7 +6,7 @@
 
   		<?php if ( 'post' == get_post_type() ) : ?>
   		<div class="entry-meta">
-  			<?php _dg_posted_on(); ?>
+  			<?php _pc_posted_on(); ?>
   		</div>
   		<?php endif; ?>
   	</header>
@@ -16,7 +16,7 @@
   	</div>
 
   	<footer class="entry-footer">
-  		<?php _dg_entry_footer(); ?>
+  		<?php _pc_entry_footer(); ?>
   	</footer>
   </article>
 

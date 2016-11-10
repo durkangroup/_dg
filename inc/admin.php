@@ -2,25 +2,25 @@
 
 
 // ADD A CUSTOM CSS FILE TO WP ADMIN AREA
-function _dg_admin_style() {
+function _pc_admin_style() {
   wp_register_style('adminstyle', get_template_directory_uri() . '/assets/css/admin.css', array(), '1.0', 'all');
   wp_enqueue_style('adminstyle');
 }
-add_action('admin_enqueue_scripts', '_dg_admin_style');
+add_action('admin_enqueue_scripts', '_pc_admin_style');
 
 
 // ADMIN FAVICON
-function _dg_admin_favicon(){
+function _pc_admin_favicon(){
   echo '<link rel="icon" href="'.get_bloginfo('template_directory').'/assets/img/favicon-wp.ico">';
 }
-add_action( 'admin_head', '_dg_admin_favicon' );
+add_action( 'admin_head', '_pc_admin_favicon' );
 
 
 // CUSTOM FOOTER
-function _dg_admin_footer() {
-  _e( '<span id="dg-info"></span>', '_dg' );
+function _pc_admin_footer() {
+  _e( '<span id="dg-info"></span>', '_pc' );
 }
-add_filter( 'admin_footer_text', '_dg_admin_footer' );
+add_filter( 'admin_footer_text', '_pc_admin_footer' );
 
 
 
@@ -109,32 +109,32 @@ if (is_admin()) {
 
 // CUSTOM LOGIN PAGE
 
-function _dg_login_css() {
+function _pc_login_css() {
   wp_enqueue_style('adminstyle', get_template_directory_uri() . '/assets/css/admin.css', array(), '1.0', 'all');
 }
 
 // changing the logo link from wordpress.org to your site
-function _dg_login_url() { return home_url(); }
+function _pc_login_url() { return home_url(); }
 
 // changing the alt text on the logo to show your site name
-function _dg_login_title() { return get_option( 'blogname' ); }
+function _pc_login_title() { return get_option( 'blogname' ); }
 
-function _dg_lostpwd_page() { return home_url() . '/wp-login.php?action=lostpassword'; }
+function _pc_lostpwd_page() { return home_url() . '/wp-login.php?action=lostpassword'; }
 
 // calling it only on the login page
-add_action( 'login_enqueue_scripts', '_dg_login_css', 10 );
-add_filter( 'login_headerurl', '_dg_login_url' );
-add_filter( 'login_headertitle', '_dg_login_title' );
-add_filter( 'lostpassword_url', '_dg_lostpwd_page' );
+add_action( 'login_enqueue_scripts', '_pc_login_css', 10 );
+add_filter( 'login_headerurl', '_pc_login_url' );
+add_filter( 'login_headertitle', '_pc_login_title' );
+add_filter( 'lostpassword_url', '_pc_lostpwd_page' );
 
 
 /*
 // ADD CUSTOM LOGO TO LOGIN PAGE
 // image size 310x70
-function _dg_login_logo() {
+function _pc_login_logo() {
   echo '<style>.login h1 a { background:url("'.get_bloginfo('template_directory').'/assets/img/logo.png") no-repeat center top; width:auto; }</style>';
 }
-add_action('login_head', '_dg_login_logo');
+add_action('login_head', '_pc_login_logo');
 
 
 
@@ -197,11 +197,11 @@ function custom_adminbar_menu( $meta = TRUE ) {
     if ( !is_user_logged_in() ) { return; }
     if ( !is_super_admin() || !is_admin_bar_showing() ) { return; }
   $wp_admin_bar->add_menu( array(
-    'id' => '_dg_logo',
-    'title' => __( '<i class="_dgicon-d-sq"></i>' ) )
+    'id' => '_pc_logo',
+    'title' => __( '<i class="_pcicon-d-sq"></i>' ) )
   );
   $wp_admin_bar->add_menu( array(
-    'parent' => '_dg_logo',
+    'parent' => '_pc_logo',
     'id'     => 'custom_link1',
     'title' => __( 'About Durkan Group'),
     'href' => 'http://durkangroup.com',
@@ -209,7 +209,7 @@ function custom_adminbar_menu( $meta = TRUE ) {
   );
   /* menu links */
   $wp_admin_bar->add_menu( array(
-    'parent'    => '_dg_logo',
+    'parent'    => '_pc_logo',
     'id'     => 'custom_link2',
     'title'     => 'Send Support Request',
     'href'  => 'mailto:support@durkangroup.com',
@@ -238,10 +238,10 @@ add_action('admin_init', 'remove_dashboard_widgets');
 
 
 // ADD AN EDITOR STYLE
-function _dg_editor_style() {
+function _pc_editor_style() {
   add_editor_style( get_template_directory_uri() . '/assets/css/editor-style.css' );
 }
-add_action('init', '_dg_editor_style');
+add_action('init', '_pc_editor_style');
 
 // ADD/REMOVE CLASSES FROM THE STYLE PROPERTIES DROP DOWN
 function add_styleselect_classes($initArray) {

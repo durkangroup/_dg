@@ -23,11 +23,11 @@
 
     <div class="site-branding">
       <h1 class="site-title <?php // or logo ?>"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
-      <button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><span><?php esc_html_e( 'Menu', '_dg' ); ?></span></button>
+      <button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><span><?php esc_html_e( 'Menu', '_pc' ); ?></span></button>
     </div>
 
     <nav class="main-navigation" role="navigation">
-      <?php _dg_nav_header(); ?>
+      <?php _pc_nav_header(); ?>
     </nav>
 
   </div>

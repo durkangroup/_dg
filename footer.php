@@ -5,7 +5,7 @@
       &copy; <?php echo date("Y"); ?> <a href="http://www.durkangroup.com" rel="designer" target="_blank">Durkan Group</a>
     </div>
 
-    <?php _dg_nav_footer(); ?>
+    <?php _pc_nav_footer(); ?>
 
   </div>
 </footer>

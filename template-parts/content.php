@@ -21,8 +21,8 @@
   <?php endif; ?>
 
   <div class="entry-content">
-    <?php _dg_excerpt('_dg_model'); ?>
-    <?php // _dg_excerpt('_dg_index'); ?>
+    <?php _pc_excerpt('_pc_model'); ?>
+    <?php // _pc_excerpt('_pc_index'); ?>
   </div>
 
 </article>

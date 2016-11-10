@@ -118,7 +118,7 @@ function default_attachment_display_settings() {
 
 /*
 // INSERT IMAGES WITHIN FIGURE ELEMENT FROM MEDIA UPLOADER
-function _dg_insert_image($html, $id, $caption, $title, $align, $url, $size, $alt) {
+function _pc_insert_image($html, $id, $caption, $title, $align, $url, $size, $alt) {
   $src  = wp_get_attachment_image_src( $id, $size, false );
 
   if ($align == 'none') {

@@ -1,7 +1,7 @@
 <?php
 
 /*
-function _dg_widgets_init() {
+function _pc_widgets_init() {
   register_sidebar( array(
     'name'          => esc_html__( 'Sidebar', '_s' ),
     'id'            => 'sidebar-1',
@@ -12,5 +12,5 @@ function _dg_widgets_init() {
     'after_title'   => '</h1>',
   ) );
 }
-add_action( 'widgets_init', '_dg_widgets_init' );
+add_action( 'widgets_init', '_pc_widgets_init' );
 */

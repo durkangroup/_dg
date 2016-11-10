@@ -23,7 +23,7 @@
   </div>
 
 	<footer class="entry-footer" role="contentinfo">
-		<?php _dg_entry_footer(); ?>
+		<?php _pc_entry_footer(); ?>
 	</footer>
 
 </article>
