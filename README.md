@@ -1,2 +1,2 @@
-# _dg
+# _pc
 Base theme.
