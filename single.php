@@ -1,7 +1,7 @@
 <?php get_header(); ?>
 
 <header id="aspot" class="post-header" data-height="half">
-  <div class="bg-img" style="background-image: url('<?php echo get_field('cover_image')['sizes']['article-cover']; ?>');"></div>
+  <div class="bg-img" style="background-image: url('');"></div>
   <div class="inner">
     <div class="container vert-center">
       <div class="row">

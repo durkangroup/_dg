@@ -5,8 +5,4 @@
 //@prepros-prepend vendor/slick.js
 //@prepros-prepend vendor/blazy.js
 //@prepros-prepend vendor/matchHeight.js
-//@prepros-prepend vendor/wow.js
-//@prepros-prepend vendor/waypoints.js
 //@prepros-prepend vendor/fluidbox.js
-//@prepros-prepend vendor/stellar.js
-//@prepros-prepend vendor/scrollClass.js

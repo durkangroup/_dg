@@ -1,4 +1,32 @@
 main {
-  .container {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  min-height: 80vh; // remove this
+  padding-top: @header-height; // remove this
+  @media @mobile-min {
+    padding-top: @header-height-tall; // remove this
   }
+}
+
+#aspot + main {
+  padding-top: 0;
+}
+
+figure {
+  margin: 0;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+hr {
+  height: 0;
+  width: 5rem;
+  margin: 2rem auto;
+  border: 0;
+  height: 2px;
+  background: @brand-primary;
 }

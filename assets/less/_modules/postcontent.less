@@ -46,13 +46,12 @@
     //   max-width: 640px;
     // }
     @media (min-width: 1200px) {
-      max-width: 800px;
+      max-width: 840px;
     }
   }
 
   h2 {
     color: @brand-secondary;
-    font-family: @font-sans-alt;
     font-size: 44px;
     font-weight: 500;
     text-transform: uppercase;
@@ -70,7 +69,6 @@
 
   h3+h4 {
     color: @brand-secondary;
-    font-family: @font-serif;
     font-size: 16px;
     font-weight: 400;
     margin-top: 0;
@@ -140,7 +138,7 @@
       max-width:600px;
     }
     @media (min-width: 960px) {
-      max-width:800px;
+      max-width:840px;
       margin: (@margin * 2) auto;
     }
     @media (min-width: 1200px) {
@@ -171,7 +169,7 @@
       max-width: 600px;
     }
     @media (min-width: 1200px) {
-      max-width: 800px;
+      max-width: 840px;
     }
     code {
       border: 1px solid @border-color;
@@ -186,7 +184,7 @@
 
 
   .wp-slick-slider {
-    padding: 0 25px;
+    padding: 0 (@gutter / 2);
     text-align: center;
     figure {
       padding: 0;
@@ -230,8 +228,8 @@
       @media (min-width: 720px) {
         max-width:720px
       }
-      @media (min-width: 800px) {
-        max-width:800px
+      @media (min-width: 840px) {
+        max-width:840px
       }
       @media (min-width: 960px) {
         max-width:960px
@@ -245,7 +243,7 @@
         max-width:600px
       }
       @media (min-width:1200px) {
-        max-width:800px;
+        max-width:840px;
       }
     }
   }
@@ -326,13 +324,13 @@
       display: block;
     }
     &.post-full figcaption.has--caption {
-      padding: 120px 27.5% 25px 25px;
+      padding: 120px 27.5% (@gutter / 2) (@gutter / 2);
       background: url('../img/ui/figcaption-grad.png') repeat-x center bottom;
       background: linear-gradient(to top, rgba(37, 43, 51, 0.25) 0, rgba(37, 43, 51, 0) 100%);
       opacity: 0;
       transition: all .2s ease 0s;
       @media @sm-max {
-        padding: 120px 25px 15px 25px;
+        padding: 120px (@gutter / 2) 15px (@gutter / 2);
         text-align: center;
       }
     }
@@ -344,8 +342,8 @@
 
   > *:not(img) {
     text-align: left;
-    padding-left: 25px;
-    padding-right: 25px;
+    padding-left: (@gutter / 2);
+    padding-right: (@gutter / 2);
   }
 
   > *:not(figure) {
@@ -378,12 +376,12 @@
         right: 0;
         position: absolute;
         bottom: 0;
-        padding: 120px 27.5% 25px 25px;
+        padding: 120px 27.5% (@gutter / 2) (@gutter / 2);
         background: url('../img/ui/figcaption-grad.png') repeat-x center bottom;
         background: linear-gradient(to top, rgba(37, 43, 51, 0.25) 0, rgba(37, 43, 51, 0) 100%);
         display: block;
         @media @sm-max {
-          padding: 120px 25px 15px 25px;
+          padding: 120px (@gutter / 2) 15px (@gutter / 2);
           text-align: center;
         }
       }
@@ -396,7 +394,7 @@
       @media (min-width: 720px) {
         max-width:670px;
       }
-      @media (min-width: 800px) {
+      @media (min-width: 840px) {
         max-width:750px;
       }
       @media (min-width: 960px) {
@@ -439,18 +437,18 @@
       padding-left: 0;
       padding-right: 0;
       @media (max-width: 799px) {
-        padding: 0 25px;
+        padding: 0 (@gutter / 2);
       }
     }
     &.size-wide {
       @media (max-width: 719px) {
-        padding: 0 25px;
+        padding: 0 (@gutter / 2);
         width: 100%;
       }
       @media (min-width: 720px) {
         max-width:670px;
       }
-      @media (min-width: 800px) {
+      @media (min-width: 840px) {
         max-width:750px;
       }
       @media (min-width: 960px) {
@@ -462,7 +460,7 @@
     }
     &.size-post {
       @media (max-width: 599px) {
-        padding: 0 25px;
+        padding: 0 (@gutter / 2);
         width: 100%;
       }
       @media (min-width: 600px) {
@@ -494,8 +492,8 @@
       margin: 0;
       padding-top: 10px;
       @media (max-width: 600px) {
-        padding-left: 25px;
-        padding-right: 25px;
+        padding-left: (@gutter / 2);
+        padding-right: (@gutter / 2);
       }
     }
   }
@@ -511,8 +509,8 @@
       margin: 0;
       padding-top: 10px;
       @media (max-width: 600px) {
-        padding-left: 25px;
-        padding-right: 25px;
+        padding-left: (@gutter / 2);
+        padding-right: (@gutter / 2);
       }
     }
   }
@@ -525,8 +523,8 @@
     @media (min-width: 720px) {
       max-width:720px;
     }
-    @media (min-width: 800px) {
-      max-width:800px;
+    @media (min-width: 840px) {
+      max-width:840px;
     }
     @media (min-width: 960px) {
       max-width:960px;

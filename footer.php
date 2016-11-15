@@ -2,10 +2,10 @@
   <div class="container">
 
     <div class="site-info">
-      &copy; <?php echo date("Y"); ?> <a href="http://www.durkangroup.com" rel="designer" target="_blank">Durkan Group</a>
+      &copy; <?php echo date("Y"); ?> <a href="http://www.practicecreative.com" rel="designer" target="_blank">Practice.</a>
     </div>
 
-    <?php _pc_nav_footer(); ?>
+    <?php // _pc_nav_footer(); ?>
 
   </div>
 </footer>

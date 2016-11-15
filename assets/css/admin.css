@@ -2,19 +2,20 @@
 @import "//fonts.googleapis.com/css?family=Open+Sans%3A300italic%2C400italic%2C600italic%2C300%2C400%2C600&subset=latin%2Clatin-ext";
 @font-face {
   font-family: '_pcicons';
-  src: url('//raabcollection.durkancloud.xyz/wp-content/themes/_pc/assets/fonts/_pcicons/_pcicons.eot?-ukf82u');
-  src: url('//raabcollection.durkancloud.xyz/wp-content/themes/_pc/assets/fonts/_pcicons/_pcicons.eot?#iefix-ukf82u') format('embedded-opentype'), url('//raabcollection.durkancloud.xyz/wp-content/themes/_pc/assets/fonts/_pcicons/_pcicons.ttf?-ukf82u') format('truetype'), url('//raabcollection.durkancloud.xyz/wp-content/themes/_pc/assets/fonts/_pcicons/_pcicons.woff?-ukf82u') format('woff'), url('//raabcollection.durkancloud.xyz/wp-content/themes/_pc/assets/fonts/_pcicons/_pcicons.svg?-ukf82u#_pcicons') format('svg');
+  src: url('../fonts/_pcicons/_pcicons.eot?dzwrof');
+  src: url('../fonts/_pcicons/_pcicons.eot?dzwrof#iefix') format('embedded-opentype'), url('../fonts/_pcicons/_pcicons.ttf?dzwrof') format('truetype'), url('../fonts/_pcicons/_pcicons.woff?dzwrof') format('woff'), url('../fonts/_pcicons/_pcicons.svg?dzwrof#_pcicons') format('svg');
   font-weight: normal;
   font-style: normal;
 }
 @media screen and (-webkit-min-device-pixel-ratio: 0) {
   @font-face {
     font-family: '_pcicons';
-    src: url('//raabcollection.durkancloud.xyz/wp-content/themes/_pc/assets/fonts/_pcicons/_pcicons.svg?-ukf82u#_pcicons') format('svg');
+    src: url('../fonts/_pcicons/_pcicons.svg?dzwrof#_pcicons') format('svg');
   }
 }
 [class^="_pcicon-"],
 [class*=" _pcicon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
   font-family: '_pcicons' !important;
   speak: none;
   font-style: normal;
@@ -26,41 +27,20 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-._pcicon-quote:before {
+._pcicon-p-sq:before {
   content: "\e904";
 }
-._pcicon-arrowalt-left:before {
+._pcicon-arrow-up:before {
   content: "\e900";
 }
-._pcicon-arrowalt-up:before {
+._pcicon-arrow-down:before {
   content: "\e901";
 }
-._pcicon-arrowalt-down:before {
+._pcicon-arrow-right:before {
   content: "\e902";
 }
-._pcicon-arrowalt-right:before {
+._pcicon-arrow-left:before {
   content: "\e903";
-}
-._pcicon-mouse:before {
-  content: "\e60e";
-}
-._pcicon-the-d:before {
-  content: "\e610";
-}
-._pcicon-mouse2:before {
-  content: "\e60f";
-}
-._pcicon-location:before {
-  content: "\e90d";
-}
-._pcicon-launch:before {
-  content: "\e905";
-}
-._pcicon-menu:before {
-  content: "\e600";
-}
-._pcicon-search:before {
-  content: "\e60d";
 }
 ._pcicon-close:before {
   content: "\e60a";
@@ -77,35 +57,32 @@
 ._pcicon-chevron-right:before {
   content: "\e608";
 }
-._pcicon-arrow-up:before {
+._pcicon-arrowstraight-up:before {
   content: "\e906";
 }
-._pcicon-arrow-down:before {
+._pcicon-arrowstraight-down:before {
   content: "\e907";
 }
-._pcicon-arrow-left:before {
+._pcicon-arrowstraight-left:before {
   content: "\e603";
 }
-._pcicon-arrow-right:before {
+._pcicon-arrowstraight-right:before {
   content: "\e604";
 }
-._pcicon-arrowshort-up:before {
-  content: "\e909";
-}
-._pcicon-arrowshort-down:before {
-  content: "\e90a";
-}
-._pcicon-arrowshort-left:before {
-  content: "\e90b";
-}
-._pcicon-arrowshort-right:before {
-  content: "\e90c";
+._pcicon-search:before {
+  content: "\e60d";
 }
 ._pcicon-email:before {
   content: "\e60c";
 }
-._pcicon-video:before {
-  content: "\e908";
+._pcicon-location:before {
+  content: "\e90d";
+}
+._pcicon-launch:before {
+  content: "\e905";
+}
+._pcicon-menu:before {
+  content: "\e600";
 }
 ._pcicon-share:before {
   content: "\e60b";
@@ -115,12 +92,6 @@
 }
 ._pcicon-google:before {
   content: "\ec00";
-}
-._pcicon-google-old:before {
-  content: "\e611";
-}
-._pcicon-gplus-old:before {
-  content: "\ec01";
 }
 ._pcicon-instagram:before {
   content: "\ec02";
@@ -149,9 +120,6 @@
 ._pcicon-wp:before {
   content: "\e602";
 }
-._pcicon-d-sq:before {
-  content: "\e601";
-}
 body {
   font-family: "Open Sans", sans-serif;
 }
@@ -175,7 +143,7 @@ body {
   display: inline-block;
 }
 #wpadminbar #wp-admin-bar-_pc_logo.menupop:hover i {
-  color: #FBBF40;
+  color: #fff;
 }
 #dg-info {
   color: #888;
@@ -226,7 +194,7 @@ body {
   background: #464b50;
 }
 #poststuff #wpseo_meta h2.hndle:after {
-  content: 'DG Optimization';
+  content: 'Practice. Optimization';
 }
 #poststuff #wpseo_meta h2.hndle span {
   display: none;

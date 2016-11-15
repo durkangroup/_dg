@@ -198,13 +198,13 @@ function custom_adminbar_menu( $meta = TRUE ) {
     if ( !is_super_admin() || !is_admin_bar_showing() ) { return; }
   $wp_admin_bar->add_menu( array(
     'id' => '_pc_logo',
-    'title' => __( '<i class="_pcicon-d-sq"></i>' ) )
+    'title' => __( '<i class="_pcicon-p-sq"></i>' ) )
   );
   $wp_admin_bar->add_menu( array(
     'parent' => '_pc_logo',
     'id'     => 'custom_link1',
-    'title' => __( 'About Durkan Group'),
-    'href' => 'http://durkangroup.com',
+    'title' => __( 'About Practice.'),
+    'href' => 'http://www.practicecreative.com',
     'meta'  => array( 'target' => '_blank' ) )
   );
   /* menu links */
@@ -212,7 +212,7 @@ function custom_adminbar_menu( $meta = TRUE ) {
     'parent'    => '_pc_logo',
     'id'     => 'custom_link2',
     'title'     => 'Send Support Request',
-    'href'  => 'mailto:support@durkangroup.com',
+    'href'  => 'mailto:support@practicecreative.com',
     'meta'  => array( 'target' => '_blank' ) )
   );
 
