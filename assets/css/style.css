@@ -471,8 +471,8 @@ body {
 .container {
   margin-right: auto;
   margin-left: auto;
-  padding-left: 20px;
-  padding-right: 20px;
+  padding-left: 15px;
+  padding-right: 15px;
 }
 @media (min-width: 600px) {
   .container {
@@ -497,12 +497,12 @@ body {
 .container-fluid {
   margin-right: auto;
   margin-left: auto;
-  padding-left: 20px;
-  padding-right: 20px;
+  padding-left: 15px;
+  padding-right: 15px;
 }
 .row {
-  margin-left: -20px;
-  margin-right: -20px;
+  margin-left: -15px;
+  margin-right: -15px;
 }
 .col-xs-1,
 .col-sm-1,
@@ -554,8 +554,8 @@ body {
 .col-lg-12 {
   position: relative;
   min-height: 1px;
-  padding-left: 20px;
-  padding-right: 20px;
+  padding-left: 15px;
+  padding-right: 15px;
 }
 @media (min-width: 600px) {
   .col-xs-1,
@@ -2462,7 +2462,7 @@ cite {
   }
 }
 .post-content .wp-slick-slider {
-  padding: 0 20px;
+  padding: 0 15px;
   text-align: center;
 }
 .post-content .wp-slick-slider figure {
@@ -2628,7 +2628,7 @@ cite {
   display: block;
 }
 .post-content [data-slick].post-full figcaption.has--caption {
-  padding: 120px 27.5% 20px 20px;
+  padding: 120px 27.5% 15px 15px;
   background: url('../img/ui/figcaption-grad.png') repeat-x center bottom;
   background: linear-gradient(to top, rgba(37, 43, 51, 0.25) 0, rgba(37, 43, 51, 0) 100%);
   opacity: 0;
@@ -2636,7 +2636,7 @@ cite {
 }
 @media (max-width: 839px) {
   .post-content [data-slick].post-full figcaption.has--caption {
-    padding: 120px 20px 15px 20px;
+    padding: 120px 15px 15px 15px;
     text-align: center;
   }
 }
@@ -2646,8 +2646,8 @@ cite {
 }
 .post-content > *:not(img) {
   text-align: left;
-  padding-left: 20px;
-  padding-right: 20px;
+  padding-left: 15px;
+  padding-right: 15px;
 }
 .post-content > *:not(figure) {
   text-align: left;
@@ -2670,14 +2670,14 @@ cite {
   right: 0;
   position: absolute;
   bottom: 0;
-  padding: 120px 27.5% 20px 20px;
+  padding: 120px 27.5% 15px 15px;
   background: url('../img/ui/figcaption-grad.png') repeat-x center bottom;
   background: linear-gradient(to top, rgba(37, 43, 51, 0.25) 0, rgba(37, 43, 51, 0) 100%);
   display: block;
 }
 @media (max-width: 839px) {
   .post-content img.size-post-full + .wp-caption-text {
-    padding: 120px 20px 15px 20px;
+    padding: 120px 15px 15px 15px;
     text-align: center;
   }
 }
@@ -2741,12 +2741,12 @@ cite {
 }
 @media (max-width: 799px) {
   .post-content figure.size-full {
-    padding: 0 20px;
+    padding: 0 15px;
   }
 }
 @media (max-width: 719px) {
   .post-content figure.size-wide {
-    padding: 0 20px;
+    padding: 0 15px;
     width: 100%;
   }
 }
@@ -2772,7 +2772,7 @@ cite {
 }
 @media (max-width: 599px) {
   .post-content figure.size-post {
-    padding: 0 20px;
+    padding: 0 15px;
     width: 100%;
   }
 }
@@ -2809,8 +2809,8 @@ cite {
 }
 @media (max-width: 600px) {
   .post-content figure figcaption {
-    padding-left: 20px;
-    padding-right: 20px;
+    padding-left: 15px;
+    padding-right: 15px;
   }
 }
 .post-content .wp-caption figcaption,
@@ -2826,8 +2826,8 @@ cite {
 @media (max-width: 600px) {
   .post-content .wp-caption figcaption,
   .post-content .wp-caption .wp-caption-text {
-    padding-left: 20px;
-    padding-right: 20px;
+    padding-left: 15px;
+    padding-right: 15px;
   }
 }
 .post-content .video-container {
@@ -3562,7 +3562,7 @@ cite {
   color: #bd9756;
   text-transform: uppercase;
   letter-spacing: 0.05rem;
-  padding: 0 20px;
+  padding: 0 15px;
   margin: 0 auto 60px;
   text-align: left;
   display: block;
