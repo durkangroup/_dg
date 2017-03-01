@@ -7,8 +7,8 @@
 
   .set-bg {
     width: 100%;
-    height:100%;
-    position: fixed;
+    height: 100%;
+    position: absolute;
     z-index: 1;
     background-repeat: no-repeat;
     background-position: center top;
@@ -23,33 +23,49 @@
     }
   }
 
-  h1 {
-
-    font-size: 100px;
-    line-height: 90px;
-    letter-spacing: -0.025em;
-    text-transform: none;
-    margin: 0;
-
-    @media @md-max {
-      font-size: 80px;
-      line-height: 1;
+  .set-pre {
+    opacity: 1;
+    .pre-bg {
+      width: 100%;
+      height: 100%;
+      background-repeat: no-repeat;
+      background-position: center top;
+      background-size: cover;
+      opacity: 1;
+      transition: all 1s @trans-function;
     }
-    @media @sm-max {
-      font-size: 70px;
-      line-height: 1;
-      [data-height="small"]& {
-        font-size: 50px;
+    &.bg-loaded {
+      .pre-bg {
+        opacity: 0;
       }
     }
-    @media @xs-max {
-      font-size: 60px;
-      line-height: 1;
-    }
-    @media @xxs-max {
-      font-size: 40px;
-    }
+  }
 
+  h1 {
+    color: #fff;
+    font-family: @headings-font;
+    font-size: 28px;
+    font-weight: 700;
+    line-height: 1;
+    margin: 0;
+    display: inline-block;
+    @media @xxs {
+      font-size: 32px;
+    }
+    @media @sm {
+      font-size: 42px;
+    }
+  }
+
+  p {
+    color: #fff;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 1.3;
+    margin: 20px 0 0;
+    @media @sm {
+      font-size: 20px;
+    }
   }
 
   .inner {
@@ -57,20 +73,37 @@
     height: 100%;
     position: relative;
     z-index: 2;
+    .container {
+      position: relative;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+  }
+
+  [data-scroll="next"] {
+    color: #fff;
+    font-size: 24px;
+    position: absolute;
+    bottom: 32px;
+    left: 50%;
+    z-index: 2;
+    transform: translateX(-50%);
+    @media @sm {
+      bottom: 48px;
+    }
+    i {
+      display: block;
+    }
   }
 
   .set-bg {
     + .inner {
-      h1 {
-        opacity: 0;
-        transition: all 1s @trans-function 0.75s;
-      }
+      opacity: 0;
+      transition: all 0.5s @trans-function 0.75s;
     }
     &.bg-loaded {
       + .inner {
-        h1 {
-          opacity: 1;
-        }
+        opacity: 1;
       }
     }
   }

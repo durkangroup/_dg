@@ -22,8 +22,8 @@
   <div class="container">
 
     <div class="site-branding">
-      <h1 class="site-title <?php // or logo ?>"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
-      <button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><span><?php esc_html_e( 'Menu', '_pc' ); ?></span></button>
+      <a href="<?php echo esc_url( home_url( '/' ) ); ?>"  class="site-title <?php // or site-logo ?>" rel="home"><?php bloginfo( 'name' ); ?></a>
+      <button class="menu-toggle" data-toggle="main-navigation"><span><?php esc_html_e( 'Menu', '_pc' ); ?></span></button>
     </div>
 
     <nav class="main-navigation" role="navigation">

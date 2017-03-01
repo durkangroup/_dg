@@ -4,6 +4,87 @@ $(function($){
 
   var _pc = window._pc || {};
 
+_pc.set = function() {
+
+  $('[data-mh]').matchHeight();
+
+  $('[data-mhnr]').matchHeight({
+    byRow: false,
+  });
+
+  // NO HEIGHT RESIZE ON MOBILE
+  if ($('html').is('.touchevents, .mobile, .tablet') ) {
+    $('[data-pxht]').each(function(index) {
+      var pxHeight =  $(this).height();
+      $(this).css('height', pxHeight+'px');
+    });
+  } else {
+    $(window).bind('load resize', function(){
+      $('[data-pxht]').each(function(index) {
+        $(this).css('height', 'auto');
+        var pxHeight =  $(this).height();
+        $(this).css('height', pxHeight+'px');
+      });
+    });
+  }
+
+};
+
+_pc.header = function() {
+
+  window.setTimeout(function () {
+    $(".site-header").addClass('is-ready');
+  }, 600);
+
+  $(window).on("load scroll resize",function(e){
+    var $this = $(this);
+    var siteHeader = $('.site-header');
+    var aH = $('.site-header + * > *:first-child').outerHeight();
+
+    if ($this.scrollTop() > aH/2) {
+      siteHeader.addClass('has-scrolled');
+    } else {
+      siteHeader.removeClass('has-scrolled');
+    }
+
+    if ($this.scrollTop() > aH) {
+      siteHeader.addClass('show-sticky');
+    } else {
+      siteHeader.removeClass('show-sticky');
+    }
+
+  });
+
+  var prevScroll = 0,
+      curDir = 'down',
+      prevDir = 'up';
+
+  $(window).scroll(function(){
+    if($(this).scrollTop() >= prevScroll){
+      curDir = 'down';
+      if(curDir != prevDir){
+        $('.site-header').removeClass('going-up', 'at-top');
+        $('.site-header').addClass('going-down');
+        prevDir = curDir;
+      }
+    } else {
+      curDir = 'up';
+      if(curDir != prevDir){
+        $('.site-header').removeClass('going-down', 'at-top');
+        $('.site-header').addClass('going-up');
+        prevDir = curDir;
+      }
+    }
+    prevScroll = $(this).scrollTop();
+
+    if($(this).scrollTop() == 0){
+      $('.site-header').removeClass('going-up').addClass('at-top');
+    }
+
+  });
+
+};
+
 _pc.scrolls = function() {
 
   // NEXT OR FIRST
@@ -74,39 +155,11 @@ _pc.scrolls = function() {
 
 _pc.toggleNav = function(){
 
-  $('[data-toggle="menu"]').on('click', function (e) {
+  $('[data-toggle="main-navigation"]').on('click', function (e) {
     e.preventDefault();
-    $('nav.main-menu').toggleClass('show-menu');
+    $('.main-navigation').toggleClass('is-visible');
+    $('body').toggleClass('show-nav');
     $('body').toggleClass('js-no-scroll');
-  });
-
-  var prevScroll = 0,
-      curDir = 'down',
-      prevDir = 'up';
-
-  $(window).scroll(function(){
-    if($(this).scrollTop() > prevScroll){
-      curDir = 'down';
-      if(curDir != prevDir){
-        $('.is-default .main-menu').addClass('going-up');
-        $('.main-menu').removeClass('going-up').removeClass('at-top');
-        $('.main-menu').addClass('going-down');
-        prevDir = curDir;
-      }
-    } else {
-      curDir = 'up';
-      if(curDir != prevDir){
-        $('.main-menu').removeClass('going-down');
-        $('.main-menu').addClass('going-up');
-        prevDir = curDir;
-      }
-    }
-    prevScroll = $(this).scrollTop();
-
-    if($(this).scrollTop() <= 0){
-      $('.main-menu').removeClass('going-up').removeClass('going-down').addClass('at-top');
-    }
-
   });
 
 };
@@ -140,20 +193,22 @@ _pc.preloadBgs = function(){
 
 _pc.aSpots = function(){
 
-  // SET ASPOT HEIGHTS IN PX
-  var windowHeight = $(window).height();
-  var aspotHeight = $('#aspot').height();
+  if ($('html').is('.touchevents, .mobile, .tablet') ) {
+    var windowHeight = $(window).height();
+    var aspotHeight = windowHeight;
+    var aspotHalf = aspotHeight / 2;
 
-  $('#aspot[data-height="half"]').css('height', aspotHeight+'px');
-  $('#aspot[data-height="full"]').css('height', windowHeight+'px');
-
-  // NO HEIGHT RESIZE ON MOBILE
-  var windowHeight = $(window).height();
-  var windowWidth = $(window).width();
-  if ( windowWidth >= 840 ) {
-    $(window).bind('resize', function(){
-      windowHeight = $(window).height();
-      $('#aspot[data-height="full"]').css('height', windowHeight+'px');
+    $('#aspot[data-height="half"]').css('height', aspotHalf+'px');
+    $('#aspot[data-height="full"]').css('height', aspotHeight+'px');
+    $('#aspot[data-height="min-full"]').css('height', aspotHeight+'px');
+  } else {
+    $(window).bind('load resize', function(){
+      var windowHeight = $(window).height();
+      var aspotHeight = windowHeight;
+      var aspotHalf = aspotHeight / 2;
+      $('#aspot[data-height="half"]').css('height', aspotHalf+'px');
+      $('#aspot[data-height="full"]').css('height', aspotHeight+'px');
+      $('#aspot[data-height="min-full"]').css('height', aspotHeight+'px');
     });
   }
 
@@ -196,8 +251,52 @@ _pc.fluidbox = function(){
 
 };
 
+_pc.gravityForms = function(){
+
+  // $('button.btn--submit').click(function() {
+  //   var orig = $(this).children('span').text();
+  //   if($('.gform_ajax_spinner').length) {
+  //   } else {
+  //     $(this).children('span').text('Sending');
+  //   }
+  // });
+
+  function gformButtons() {
+
+    $('button.btn--submit.text-change').click(function(e) {
+      var orig = $(this).children('span').text();
+      $(this).addClass('form-sending');
+      $(this).children('span').text('Sending');
+    });
+
+    $('button.btn--submit.icon-change').click(function(e) {
+      if($('.gform_ajax_spinner').length) {
+      } else {
+        $(this).addClass('form-sending');
+        $(this).children('i').removeClass('_pcicon-arrow-right').addClass('_pcicon-loading');
+      }
+    });
+
+  }
+
+  gformButtons();
+
+  $(document).bind('gform_post_render', function(){
+    gformButtons();
+  });
+
+  $(document).bind('gform_confirmation_loaded', function(event, formId){
+    if(formId == 1) {
+    }
+    if(formId == 3) {
+    }
+  });
+
+};
+
 var bLazy = new Blazy({
   offset: 600,
+  loadInvisible: true,
   breakpoints: [{
     width: 600,
     src: 'data-src-small'
@@ -209,12 +308,15 @@ var bLazy = new Blazy({
 
 // INITIALIZE
 $(function() {
+  _pc.set();
+  _pc.header();
   _pc.scrolls();
   _pc.toggleNav();
   _pc.preloadBgs();
   _pc.aSpots();
   _pc.slick();
   _pc.fluidbox();
+  _pc.gravityForms();
 });
 
 });

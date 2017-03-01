@@ -36,6 +36,7 @@ function _pc_setup() {
   add_image_size('post-featured-xl', 1600, 800, true);
 
   add_image_size('article-cover', 1600, 900, true);
+  add_image_size('article-cover-pre', 32, 18, true);
 
 }
 endif;
