@@ -73,24 +73,44 @@
 //   }
 // }
 
-
 @gutter:                    30px;
 
-@width-xxs:                 480px;
-@width-xs:                  600px;
-@width-sm:                  840px;
-@width-md:                  960px;
-@width-lg:                  1200px;
-@width-xl:                  1440px;
-@width-xxl:                 1600px;
+// SET SIZES
+@handset-sm:             360px;
+@handset-md:             480px;
+@handset-lg:             600px;
 
-@container-xxs:             @width-xxs;
-@container-xs:              @width-xs;
-@container-sm:              @width-sm;
-@container-md:              @width-md;
-@container-lg:              @width-lg;
-@container-xl:              @width-xl;
-@container-xxl:             @width-xxl;
+@tablet-sm-port:         720px;
+@tablet-md-port:         840px;
+@tablet-lg-port:         960px;
+
+@tablet-sm-land:         1024px;
+@tablet-lg-land:         1280px;
+
+@desktop-sm:             1440px;
+@desktop-md:             1600px;
+@desktop-lg:             1920px;
+
+
+// MEDIA QUERIES
+@width-xxs:                 (@handset-sm + @gutter);; // 360px;
+
+@width-xs:                  (@handset-md + @gutter);; // 480px;
+@width-sm:                  (@handset-lg + @gutter);; // 600px;
+@width-md:                  (@tablet-lg-port + @gutter);; // 960px;
+@width-lg:                  (@tablet-lg-land + @gutter);; // 1280px;
+
+@width-xl:                  (@desktop-sm + @gutter);; // 1440px;
+@width-xxl:                 (@desktop-md + @gutter);; // 1600px;
+
+
+@container-xxs:             (@width-xxs - @gutter);
+@container-xs:              (@width-xs - @gutter);
+@container-sm:              (@width-sm - @gutter);
+@container-md:              (@width-md - @gutter);
+@container-lg:              (@width-lg - @gutter);
+@container-xl:              (@width-xl - @gutter);
+@container-xxl:             (@width-xxl - @gutter);
 
 
 @width-xxs-max:             (@width-xxs - 1);
@@ -119,6 +139,25 @@
 @lg-max:                    ~"(max-width: @{width-lg-max})";
 @xl-max:                    ~"(max-width: @{width-xl-max})";
 @xxl-max:                   ~"(max-width: @{width-xxl-max})";
+
+
+
+
+@hndst-sm:                  @xxs;
+@hndst-md:                  @xs;
+@hndst-lg:                  @sm;
+
+@tblt-sm-port:              ~"(min-width: @{tablet-sm-port})";
+@tblt-md-port:              ~"(min-width: @{tablet-md-port})";
+@tblt-lg-port:              @md;
+
+@tblt-sm-land:              ~"(min-width: @{tablet-sm-land})";
+@tblt-lg-land:              @lg;
+
+@dsktp-sm:                  @xl;
+@dsktp-md:                  @xxl;
+@dsktp-lg:                  ~"(min-width: @{desktop-lg})";
+
 
 
 @mobile-min:                @md;
